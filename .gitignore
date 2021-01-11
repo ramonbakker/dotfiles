@@ -1,0 +1,5 @@
+jsdoc_templates/default.js
+pdv_templates/function.tpl
+UltiSnips/php.snippets
+UltiSnips/typescript.snippets
+vimify.vimrc

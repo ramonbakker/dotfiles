@@ -1,0 +1,11 @@
+module.exports = {
+  generateClassDoc: (doc) => {
+    return `/** ${doc.name} */`
+  },
+  generateInterfaceDoc: (doc) => {
+    return `// ${doc.name}`
+  },
+  generateFunctionDoc: (doc) => {
+    return `/**\n * ${doc.name}\n *\n * @author Ramon Bakker <ramon.b@live.nl>\n * @version 1.0.0\n */`
+  },
+}
