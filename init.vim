@@ -6,6 +6,7 @@ runtime vimify.vimrc
 
 set number relativenumber
 set colorcolumn=80,120
+set termguicolors
 set cursorline
 set listchars=tab:>·,trail:~,extends:>,precedes:<,space:· 
 set list
@@ -162,7 +163,7 @@ call plug#end()
 colorscheme vim-monokai-tasty
 let g:airline_theme = 'monokai_tasty'
 let g:airline_powerline_fonts = 1
-highlight LineNr ctermfg=white
+highlight LineNr ctermfg=white guifg=white
 hi Normal guibg=None ctermbg=None
 
 hi IndentGuidesOdd ctermbg=black
