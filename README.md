@@ -31,7 +31,7 @@ $ cp konsole/Ramon.profile konsole/GreenOnBlack.colorscheme ~/.local/share/konso
 11. Put configuration in ~/.zshrc:
 ```
 PATH=$PATH:~/.local/bin
-plugins=(git laravel nvm ng supervisor yarn composer zsh-autosuggestions vi-mode fzf-tab)
+plugins=(git laravel nvm ng supervisor yarn composer zsh-autosuggestions vi-mode fzf)
 export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git"
 ```
 12. Copy (or create a symbolic link) configuration file for tmux:
