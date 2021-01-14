@@ -90,6 +90,8 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<C-n>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
 
+let g:snipMate = { 'snippet_version' : 1 }
+
 let g:fern#renderer = 'nerdfont'
 
 call plug#begin(stdpath('data') . '/plugged')
