@@ -33,10 +33,10 @@ nnoremap <Leader>t :CocList --interactive --auto-preview symbols<CR>
 vnoremap <Leader>sl !awk '{ print length, $0 }' \| sort -n \| cut -d ' ' -f 2-<CR>
 vnoremap <Leader>slr !awk '{ print length, $0 }' \| sort -nr \| cut -d ' ' -f 2-<CR>
 
-nnoremap <Leader>s <Plug>Sneak_s
-nnoremap <Leader>S <Plug>Sneak_S
-noremap <Leader>; <Plug>Sneak_;
-noremap <Leader>, <Plug>Sneak_,
+nmap <Leader>s <Plug>Sneak_s
+nmap <Leader>S <Plug>Sneak_S
+nmap <Leader>; <Plug>Sneak_;
+nmap <Leader>, <Plug>Sneak_,
 
 " Documentation: https://vim.fandom.com/wiki/Moving_lines_up_or_down
 nnoremap <A-j> :m .+1<CR>==
