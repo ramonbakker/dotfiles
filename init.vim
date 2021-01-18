@@ -1,7 +1,6 @@
 runtime coc.vimrc
 runtime airline.vimrc
 runtime syntastic.vimrc
-runtime jest.vimrc
 runtime vimify.vimrc
 
 set number relativenumber
@@ -38,6 +37,13 @@ nmap <Leader>S <Plug>Sneak_S
 nmap <Leader>; <Plug>Sneak_;
 nmap <Leader>, <Plug>Sneak_,
 
+" vim-test
+nmap <Leader>tn :TestNearest<CR>
+nmap <Leader>tf :Testfile<CR>
+nmap <Leader>ts :TestSuite<CR>
+nmap <Leader>tl :TestLast<CR>
+nmap <Leader>tv :TestVisit<CR>
+
 " Documentation: https://vim.fandom.com/wiki/Moving_lines_up_or_down
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -71,7 +77,6 @@ let g:coc_global_extensions = [
 	\'coc-tsserver',
 	\'coc-phpls',
 	\'coc-css',
-	\'coc-jest',
 	\'coc-snippets',
 	\'coc-lists',
 	\'coc-html',
@@ -93,6 +98,9 @@ let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
 let g:snipMate = { 'snippet_version' : 1 }
 
 let g:fern#renderer = 'nerdfont'
+
+let g:test#strategy = 'neovim'
+let g:test#javascript#runner = 'jest'
 
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'patstockwell/vim-monokai-tasty'
@@ -144,7 +152,6 @@ Plug 'ncm2/ncm2'
 Plug 'noahfrederick/vim-composer'
 Plug 'noahfrederick/vim-laravel'
 Plug 'tobyS/pdv'
-Plug 'c9s/phpunit.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'heavenshell/vim-jsdoc', {
 	\ 'for': ['javascript', 'javascript.jsx', 'typescript'],
@@ -154,6 +161,7 @@ Plug 'Quramy/vim-js-pretty-template'
 Plug 'jason0x43/vim-js-indent'
 Plug 'justinmk/vim-sneak'
 Plug 'bkad/CamelCaseMotion'
+Plug 'vim-test/vim-test'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vimwiki/vimwiki'
 Plug 'tools-life/taskwiki'
