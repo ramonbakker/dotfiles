@@ -44,5 +44,6 @@ $ cp tmux/.tmux.conf ~/.tmux.conf
 ```
 :PlugInstall
 :CocInstall
+:TSInstall php typescript jsdoc html css graphql yaml json bash regex
 ```
 15. Enjoy!
