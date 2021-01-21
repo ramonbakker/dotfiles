@@ -165,7 +165,15 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'vimwiki/vimwiki'
 Plug 'tools-life/taskwiki'
 Plug 'n0v1c3/vira', { 'do': './install.sh', 'on': 'ViraIssues' }
-Plug 'HendrikPetertje/vimify'
+Plug 'HendrikPetertje/vimify', { 'on': [
+    \ 'SpPlay',
+    \ 'SpPause',
+    \ 'SpPrevious',
+    \ 'SpNext',
+    \ 'Spotify',
+    \ 'SpToggle',
+    \ 'SpSearch',
+    \ ]}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
