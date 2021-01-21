@@ -5,5 +5,8 @@ require'nvim-treesitter.configs'.setup {
     custom_captures = {
     },
   },
+  indent = {
+    enable = true
+    },
 }
 EOF

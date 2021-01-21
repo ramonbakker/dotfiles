@@ -1,7 +1,6 @@
 runtime coc.vimrc
 runtime airline.vimrc
 runtime syntastic.vimrc
-runtime vimify.vimrc
 
 set number relativenumber
 set colorcolumn=80,120
@@ -103,78 +102,101 @@ let g:test#strategy = 'neovim'
 let g:test#javascript#runner = 'jest'
 
 call plug#begin(stdpath('data') . '/plugged')
+" Dependencies
+Plug 'MarcWeber/vim-addon-mw-utils' " garbas/vim-snipmate
+Plug 'tomtom/tlib_vim' " garbas/vim-snipmate
+Plug 'tobyS/vmustache' " tobyS/pdv
+Plug 'lambdalisue/glyph-palette.vim' " lambdalisue/nerdfont.vim, lambdalisue/fern-renderer-nerdfont.vim
+Plug 'lambdalisue/nerdfont.vim' " lambdalisue/fern-renderer-nerdfont.vim
+Plug 'lambdalisue/fern-renderer-nerdfont.vim' " lambdalisue/fern.vim
+Plug 'lambdalisue/fern-git-status.vim' " lambdalisue/fern.vim
+Plug 'lambdalisue/fern-mapping-quickfix.vim' " lambdalisue/fern.vim
+Plug 'ryanoasis/vim-devicons' " vim-airline/vim-airline
+Plug 'tommcdo/vim-fubitive' " tpope/vim-fugitive
+
+" Theming
 Plug 'sainnhe/sonokai'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'ap/vim-css-color'
-Plug 'airblade/vim-gitgutter'
-Plug 'liuchengxu/vista.vim'
-Plug 'xolox/vim-misc'
-Plug 'vim-syntastic/syntastic'
-Plug 'pangloss/vim-javascript'
-Plug 'elzr/vim-json'
-Plug 'mogelbrod/vim-jsonpath', { 'on': 'JsonPath' }
-Plug 'jparise/vim-graphql'
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/glyph-palette.vim'
-Plug 'lambdalisue/fern-git-status.vim'
-Plug 'lambdalisue/fern-mapping-quickfix.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-fugitive'
-Plug 'tommcdo/vim-fubitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'mbbill/undotree'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'prettier/vim-prettier'
-Plug 'mattn/emmet-vim'
-Plug 'vim-vdebug/vdebug'
-Plug 'SirVer/ultisnips'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'grvcoelho/vim-javascript-snippets'
-Plug 'tobyS/vmustache'
-Plug 'stephpy/vim-php-cs-fixer'
-Plug '2072/PHP-Indenting-for-vim'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-projectionist'
-Plug 'ncm2/ncm2'
+
+" PHP
+Plug 'tobyS/pdv'
 Plug 'noahfrederick/vim-composer'
 Plug 'noahfrederick/vim-laravel'
-Plug 'tobyS/pdv'
-Plug 'leafgarland/typescript-vim'
+
+" TypeScript/JavaScript
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'heavenshell/vim-jsdoc', {
     \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
     \ 'do': 'make install'
 \ }
-Plug 'Quramy/vim-js-pretty-template'
-Plug 'jason0x43/vim-js-indent'
-Plug 'justinmk/vim-sneak'
-Plug 'bkad/CamelCaseMotion'
+
+" HTML
+Plug 'alvan/vim-closetag'
+
+" CSS
+Plug 'ap/vim-css-color'
+
+" GraphQL
+Plug 'jparise/vim-graphql'
+
+" JSON
+Plug 'elzr/vim-json'
+Plug 'mogelbrod/vim-jsonpath', { 'on': 'JsonPath' }
+
+" Utilities
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'liuchengxu/vista.vim'
+Plug 'mbbill/undotree'
+
+" LSP
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
+" Syntax
+Plug 'vim-syntastic/syntastic'
+Plug 'leafgarland/typescript-vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" File management
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'lambdalisue/fern.vim'
+
+" Testing
 Plug 'vim-test/vim-test'
-Plug 'christoomey/vim-tmux-navigator'
+
+" Debugging
+Plug 'vim-vdebug/vdebug'
+
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'garbas/vim-snipmate'
+Plug 'grvcoelho/vim-javascript-snippets'
+
+" Code style helpers
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'prettier/vim-prettier'
+
+" Motions
+Plug 'bkad/CamelCaseMotion'
+Plug 'justinmk/vim-sneak'
+
+" Git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+" Project management
 Plug 'vimwiki/vimwiki'
 Plug 'tools-life/taskwiki'
 Plug 'n0v1c3/vira', { 'do': './install.sh', 'on': 'ViraIssues' }
-Plug 'HendrikPetertje/vimify', { 'on': [
-    \ 'SpPlay',
-    \ 'SpPause',
-    \ 'SpPrevious',
-    \ 'SpNext',
-    \ 'Spotify',
-    \ 'SpToggle',
-    \ 'SpSearch',
-    \ ]}
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" General
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-dispatch'
 call plug#end()
 
 let g:sonokai_enable_italic = 1
