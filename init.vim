@@ -73,21 +73,21 @@ let g:jsdoc_templates_path = $HOME. '/.config/nvim/jsdoc_templates/default.js'
 let g:jsdoc_formatter = 'tsdoc'
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 1 } }
 let g:coc_global_extensions = [
-	\'coc-json',
-	\'coc-tsserver',
-	\'coc-phpls',
-	\'coc-css',
-	\'coc-snippets',
-	\'coc-lists',
-	\'coc-html',
-	\'coc-yaml',
-	\'coc-highlight',
-	\'coc-tabnine',
-	\'coc-emmet',
-	\'coc-angular',
-	\'coc-pairs',
-	\'coc-prettier'
-	\]
+    \ 'coc-json',
+    \ 'coc-tsserver',
+    \ 'coc-phpls',
+    \ 'coc-css',
+    \ 'coc-snippets',
+    \ 'coc-lists',
+    \ 'coc-html',
+    \ 'coc-yaml',
+    \ 'coc-highlight',
+    \ 'coc-tabnine',
+    \ 'coc-emmet',
+    \ 'coc-angular',
+    \ 'coc-pairs',
+    \ 'coc-prettier'
+    \ ]
 let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_guide_size = 1
 
@@ -153,8 +153,8 @@ Plug 'noahfrederick/vim-laravel'
 Plug 'tobyS/pdv'
 Plug 'leafgarland/typescript-vim'
 Plug 'heavenshell/vim-jsdoc', {
-	\ 'for': ['javascript', 'javascript.jsx', 'typescript'],
-	\ 'do': 'make install'
+    \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
+    \ 'do': 'make install'
 \ }
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'jason0x43/vim-js-indent'
