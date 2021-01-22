@@ -112,6 +112,8 @@ Plug 'lambdalisue/fern-git-status.vim' " lambdalisue/fern.vim
 Plug 'lambdalisue/fern-mapping-quickfix.vim' " lambdalisue/fern.vim
 Plug 'ryanoasis/vim-devicons' " vim-airline/vim-airline
 Plug 'tommcdo/vim-fubitive' " tpope/vim-fugitive
+Plug 'tpope/vim-dispatch' " noahfrederick/vim-laravel
+Plug 'tpope/vim-projectionist' " noahfrederick/vim-laravel
 
 " Theming
 Plug 'sainnhe/sonokai'
@@ -195,7 +197,6 @@ Plug 'n0v1c3/vira', { 'do': './install.sh', 'on': 'ViraIssues' }
 
 " General
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-dispatch'
 call plug#end()
 
 let g:sonokai_enable_italic = 1
