@@ -77,7 +77,6 @@ let g:coc_global_extensions = [
     \ 'coc-phpls',
     \ 'coc-css',
     \ 'coc-snippets',
-    \ 'coc-lists',
     \ 'coc-html',
     \ 'coc-yaml',
     \ 'coc-highlight',
