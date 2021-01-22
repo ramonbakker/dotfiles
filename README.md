@@ -43,7 +43,6 @@ $ cp tmux/.tmux.conf ~/.tmux.conf
 14. Execute in Neovim:
 ```
 :PlugInstall
-:CocInstall
 :TSInstall php typescript jsdoc html css graphql yaml json bash regex
 ```
 15. Enjoy!
