@@ -31,7 +31,7 @@ $ cp konsole/Ramon.profile konsole/GreenOnBlack.colorscheme ~/.local/share/konso
 11. Put configuration in ~/.zshrc:
 ```
 PATH=$PATH:~/.local/bin
-plugins=(git laravel nvm ng supervisor yarn composer zsh-autosuggestions vi-mode fzf)
+plugins=(git laravel ng supervisor yarn composer zsh-autosuggestions vi-mode fzf)
 export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git"
 ```
 12. (Recommended) Use fd-find instead of find for fzf, which gives a better performance: see https://github.com/junegunn/fzf#settings. You might need to change fd to fdfind in the configuration.
