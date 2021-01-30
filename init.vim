@@ -189,6 +189,7 @@ Plug 'justinmk/vim-sneak'
 " Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'stsewd/fzf-checkout.vim'
 
 " Project management
 Plug 'vimwiki/vimwiki'
