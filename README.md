@@ -19,6 +19,8 @@ $ ln -s /usr/bin/batcat ~/.local/bin/bat
 $ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+$ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 6. Copy (or create a symbolic link) configuration files for Konsole (make sure to edit Konsole settings afterwards):
 ```zsh
@@ -31,7 +33,7 @@ $ cp konsole/Ramon.profile konsole/GreenOnBlack.colorscheme ~/.local/share/konso
 11. Put configuration in ~/.zshrc:
 ```
 PATH=$PATH:~/.local/bin
-plugins=(git laravel ng supervisor yarn composer zsh-autosuggestions vi-mode fzf)
+plugins=(git laravel ng supervisor yarn composer zsh-autosuggestions vi-mode fzf zsh-syntax-highlighting)
 export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git"
 ```
 12. (Recommended) Use fd-find instead of find for fzf, which gives a better performance: see https://github.com/junegunn/fzf#settings. You might need to change fd to fdfind in the configuration.
