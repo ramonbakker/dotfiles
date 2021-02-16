@@ -23,7 +23,7 @@ nnoremap <F3> :call pdv#DocumentWithSnip()<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <Leader>c :Files %:p:h<CR>
 nnoremap <Leader>lb :Buffers<CR>
-nnoremap <Leader>ls :Vista finder coc<CR>
+nnoremap <Leader>ls :call vista#finder#fzf#Run('coc')<CR>
 nnoremap <Leader>h :History<CR>
 nnoremap <Leader>t :CocList --interactive --auto-preview symbols<CR>
 
