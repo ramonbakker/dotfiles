@@ -78,7 +78,6 @@ let g:sneak#f_reset = 0
 let g:sneak#t_reset = 0
 let g:camelcasemotion_key = '<Leader>'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-let g:vim_json_syntax_conceal = 0
 let g:jsonpath_register = 'j'
 let g:pdv_template_dir = $HOME . '/.config/nvim/pdv_templates'
 let g:jsdoc_templates_path = $HOME. '/.config/nvim/jsdoc_templates/default.js'
