@@ -1,36 +1,45 @@
-runtime coc.vimrc
-runtime airline.vimrc
-runtime syntastic.vimrc
-
 set number relativenumber
 set colorcolumn=80,120
 set termguicolors
 set cursorline
 set listchars=tab:>·,trail:~,extends:>,precedes:<,space:· 
 set list
-set tags+=$HOME/.config/nvim/tags/
 set clipboard=unnamed
 set clipboard=unnamedplus
 set undofile
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set hidden
+set nobackup
+set nowritebackup
+set signcolumn=yes
+set updatetime=300
+set completeopt=menuone,noinsert
 
 inoremap jj <Esc>
 inoremap <C-M-i> <C-O>:call PhpInsertUse()<CR>
 nnoremap <F2> :Fern . -reveal=% -drawer -toggle -width=40<CR>
 nnoremap <F3> :call pdv#DocumentWithSnip()<CR>
-nnoremap <C-p> :Files<CR>
-nnoremap <Leader>c :Files %:p:h<CR>
-nnoremap <Leader>lb :Buffers<CR>
-nnoremap <Leader>ls :call vista#finder#fzf#Run('coc')<CR>
-nnoremap <Leader>h :History<CR>
-nnoremap <Leader>t :CocList --interactive --auto-preview symbols<CR>
+nnoremap <C-p> :Telescope find_files find_command=fdfind,--type,f,--hidden,--follow,--exclude,.git<CR>
+nnoremap <Leader>c :Telescope find_files cwd=%:p:h find_command=fdfind,--type,f,--hidden,--follow,--exclude,.git<CR>
+nnoremap <Leader>ac :Telescope lsp_code_actions<CR>
+nnoremap <Leader>lb :Telescope buffers<CR>
+nnoremap <Leader>ls :Telescope lsp_document_symbols<CR>
+nnoremap <Leader>gb :Telescope git_branches<CR>
+nnoremap <Leader>h :Telescope oldfiles<CR>
+nnoremap <Leader>t :Telescope lsp_workspace_symbols query=
+
+" completion-nvim
+" Documentation: https://github.com/nvim-lua/completion-nvim#changing-completion-confirm-key
+imap <expr> <CR> pumvisible() ? complete_info()["selected"] != "-1" ?
+    \ "\<Plug>(completion_confirm_completion)" : "\<c-e>\<CR>" : "\<CR>"
 
 " Sort selected lines by length
 vnoremap <Leader>sl !awk '{ print length, $0 }' \| sort -n \| cut -d ' ' -f 2-<CR>
 vnoremap <Leader>slr !awk '{ print length, $0 }' \| sort -nr \| cut -d ' ' -f 2-<CR>
 
+" vim-sneak
 nmap <Leader>s <Plug>Sneak_s
 nmap <Leader>S <Plug>Sneak_S
 nmap <Leader>; <Plug>Sneak_;
@@ -51,14 +60,18 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-" Documentation: https://github.com/neoclide/coc-css#install
-autocmd FileType scss setl iskeyword+=@-@
+command -nargs=* Rg Telescope grep_string search=<args>
 
 " Configuration for stephpy/vim-php-cs-fixer
 " Install php-cs-fixer with 'composer global require friendsofphp/php-cs-fixer'
-autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+autocmd BufWritePre *.php silent! call PhpCsFixerFixFile()
 
-autocmd BufWritePost *.php silent! PrettierAsync
+autocmd BufWritePre *.php silent! lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.ts,*.html,*.scss,*.css,*.json silent! Prettier
+
+autocmd BufEnter * lua require'completion'.on_attach()
+
+autocmd User TelescopePreviewerLoaded setlocal wrap
 
 let g:sneak#label = 1
 let g:sneak#f_reset = 0
@@ -70,22 +83,6 @@ let g:jsonpath_register = 'j'
 let g:pdv_template_dir = $HOME . '/.config/nvim/pdv_templates'
 let g:jsdoc_templates_path = $HOME. '/.config/nvim/jsdoc_templates/default.js'
 let g:jsdoc_formatter = 'tsdoc'
-let g:fzf_layout = { 'window': { 'width': 1, 'height': 1 } }
-let g:coc_global_extensions = [
-    \ 'coc-json',
-    \ 'coc-tsserver',
-    \ 'coc-phpls',
-    \ 'coc-css',
-    \ 'coc-snippets',
-    \ 'coc-html',
-    \ 'coc-yaml',
-    \ 'coc-highlight',
-    \ 'coc-tabnine',
-    \ 'coc-emmet',
-    \ 'coc-angular',
-    \ 'coc-pairs',
-    \ 'coc-prettier'
-    \ ]
 let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_guide_size = 1
 
@@ -93,17 +90,25 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<C-n>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
 
-let g:snipMate = { 'snippet_version' : 1 }
+let g:completion_enable_snippet = 'UltiSnips'
 
 let g:fern#renderer = 'nerdfont'
 
 let g:test#strategy = 'neovim'
 let g:test#javascript#runner = 'jest'
 
+let g:completion_confirm_key = ""
+let g:completion_chain_complete_list = {
+    \'default': [
+    \   {'complete_items': ['lsp', 'snippet', 'tabnine']},
+    \   {'mode': '<c-p>'},
+    \   {'mode': '<c-pn'}
+    \]
+\}
+let g:completion_tabnine_sort_by_details = 1
+
 call plug#begin(stdpath('data') . '/plugged')
 " Dependencies
-Plug 'MarcWeber/vim-addon-mw-utils' " garbas/vim-snipmate
-Plug 'tomtom/tlib_vim' " garbas/vim-snipmate
 Plug 'tobyS/vmustache' " tobyS/pdv
 Plug 'lambdalisue/glyph-palette.vim' " lambdalisue/nerdfont.vim, lambdalisue/fern-renderer-nerdfont.vim
 Plug 'lambdalisue/nerdfont.vim' " lambdalisue/fern-renderer-nerdfont.vim
@@ -114,6 +119,10 @@ Plug 'ryanoasis/vim-devicons' " vim-airline/vim-airline
 Plug 'tommcdo/vim-fubitive' " tpope/vim-fugitive
 Plug 'tpope/vim-dispatch' " noahfrederick/vim-laravel
 Plug 'tpope/vim-projectionist' " noahfrederick/vim-laravel
+Plug 'nvim-lua/popup.nvim' " nvim-telescope/telescope.nvim
+Plug 'nvim-lua/plenary.nvim' " nvim-telescope/telescope.nvim
+Plug 'nvim-telescope/telescope-fzy-native.nvim' " nvim-telescope/telescope.nvim
+Plug 'kyazdani42/nvim-web-devicons' " nvim-telescope/telescope.nvim
 
 " Theming
 Plug 'sainnhe/sonokai'
@@ -127,7 +136,6 @@ Plug 'noahfrederick/vim-composer'
 Plug 'noahfrederick/vim-laravel'
 
 " TypeScript/JavaScript
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'heavenshell/vim-jsdoc', {
     \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
     \ 'do': 'make install'
@@ -143,27 +151,24 @@ Plug 'ap/vim-css-color'
 Plug 'jparise/vim-graphql'
 
 " JSON
-Plug 'elzr/vim-json'
 Plug 'mogelbrod/vim-jsonpath', { 'on': 'JsonPath' }
 
 " Utilities
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree'
+Plug 'jiangmiao/auto-pairs'
 
 " LSP
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neovim/nvim-lspconfig'
 
 " Syntax
 Plug 'vim-syntastic/syntastic'
-Plug 'leafgarland/typescript-vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " File management
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'lambdalisue/fern.vim'
 
 " Testing
@@ -172,15 +177,18 @@ Plug 'vim-test/vim-test'
 " Debugging
 Plug 'vim-vdebug/vdebug'
 
+" Completion
+Plug 'nvim-lua/completion-nvim'
+Plug 'aca/completion-tabnine', { 'do': './install.sh' }
+
 " Snippets
 Plug 'SirVer/ultisnips'
-Plug 'garbas/vim-snipmate'
-Plug 'grvcoelho/vim-javascript-snippets'
+Plug 'HerringtonDarkholme/yats.vim'
 
 " Code style helpers
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Motions
 Plug 'bkad/CamelCaseMotion'
@@ -189,7 +197,6 @@ Plug 'justinmk/vim-sneak'
 " Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'stsewd/fzf-checkout.vim'
 Plug 'junegunn/gv.vim'
 
 " Project management
@@ -219,13 +226,12 @@ hi Normal guibg=None ctermbg=None
 hi IndentGuidesOdd ctermbg=black
 hi IndentGuidesEven ctermbg=black
 
-function! GetCocCurrentFunction()
-    return get(b:, 'coc_current_function', '')
-endfunction
+hi link LspDiagnosticsVirtualTextError Red
+hi link LspDiagnosticsVirtualTextWarning Orange
 
-call airline#parts#define_function('coc_current_function', 'GetCocCurrentFunction')
-let g:airline_section_x = airline#section#create_right(['coc_current_function', 'filetype'])
-
-runtime fzf.vimrc
 runtime nvim-treesitter.vimrc
+runtime nvim-lsp.vimrc
+runtime nvim-web-devicons.vimrc
 runtime fern.vimrc
+runtime airline.vimrc
+runtime syntastic.vimrc
