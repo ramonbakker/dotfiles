@@ -152,6 +152,9 @@ Plug 'jparise/vim-graphql'
 " JSON
 Plug 'mogelbrod/vim-jsonpath', { 'on': 'JsonPath' }
 
+" LaTeX
+Plug 'lervag/vimtex'
+
 " Utilities
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
