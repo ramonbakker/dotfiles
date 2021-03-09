@@ -100,7 +100,7 @@ let g:completion_chain_complete_list = {
     \'default': [
     \   {'complete_items': ['lsp', 'snippet', 'tabnine']},
     \   {'mode': '<c-p>'},
-    \   {'mode': '<c-pn'}
+    \   {'mode': '<c-n>'}
     \]
 \}
 let g:completion_tabnine_sort_by_details = 1
