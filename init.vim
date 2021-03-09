@@ -164,7 +164,6 @@ Plug 'jiangmiao/auto-pairs'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Syntax
 Plug 'vim-syntastic/syntastic'
