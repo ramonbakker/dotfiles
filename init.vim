@@ -89,13 +89,12 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<C-n>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
 
-let g:completion_enable_snippet = 'UltiSnips'
-
 let g:fern#renderer = 'nerdfont'
 
 let g:test#strategy = 'neovim'
 let g:test#javascript#runner = 'jest'
 
+let g:completion_enable_snippet = 'UltiSnips'
 let g:completion_confirm_key = ""
 let g:completion_chain_complete_list = {
     \'default': [
@@ -105,6 +104,7 @@ let g:completion_chain_complete_list = {
     \]
 \}
 let g:completion_tabnine_sort_by_details = 1
+let g:completion_enable_auto_paren = 1
 
 call plug#begin(stdpath('data') . '/plugged')
 " Dependencies
