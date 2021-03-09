@@ -34,6 +34,8 @@ nnoremap <Leader>t :Telescope lsp_workspace_symbols query=
 " Documentation: https://github.com/nvim-lua/completion-nvim#changing-completion-confirm-key
 imap <expr> <CR> pumvisible() ? complete_info()["selected"] != "-1" ?
     \ "\<Plug>(completion_confirm_completion)" : "\<c-e>\<CR>" : "\<CR>"
+imap <C-j> <Plug>(completion_next_source)
+imap <C-k> <Plug>(completion_prev_source)
 
 " Sort selected lines by length
 vnoremap <Leader>sl !awk '{ print length, $0 }' \| sort -n \| cut -d ' ' -f 2-<CR>
@@ -98,7 +100,8 @@ let g:completion_enable_snippet = 'UltiSnips'
 let g:completion_confirm_key = ""
 let g:completion_chain_complete_list = {
     \'default': [
-    \   {'complete_items': ['lsp', 'snippet', 'tabnine']},
+    \   {'complete_items': ['lsp', 'snippet']},
+    \   {'complete_items': ['tabnine']},
     \   {'mode': '<c-p>'},
     \   {'mode': '<c-n>'}
     \]
