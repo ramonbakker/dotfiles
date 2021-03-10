@@ -21,7 +21,7 @@ inoremap jj <Esc>
 inoremap <C-M-i> <C-O>:call PhpInsertUse()<CR>
 nnoremap <F2> :Fern . -reveal=% -drawer -toggle -width=40<CR>
 nnoremap <F3> :call pdv#DocumentWithSnip()<CR>
-nnoremap <C-p> :Telescope find_files find_command=fdfind,--type,f,--hidden,--follow,--exclude,.git<CR>
+nnoremap <C-p> :Telescope find_files find_command=fdfind,--type,f,--hidden,--exclude,.git<CR>
 nnoremap <Leader>c :Telescope find_files cwd=%:p:h find_command=fdfind,--type,f,--hidden,--follow,--exclude,.git<CR>
 nnoremap <Leader>ac :Telescope lsp_code_actions<CR>
 nnoremap <Leader>lb :Telescope buffers<CR>
