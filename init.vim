@@ -73,6 +73,9 @@ autocmd BufWritePost *.ts,*.html,*.scss,*.css,*.json silent! Prettier
 
 autocmd BufEnter * lua require'completion'.on_attach()
 
+" Documentation: https://github.com/nvim-lua/completion-nvim/issues/252
+autocmd BufEnter *.php :set iskeyword=@,48-57,_,192-255,$
+
 autocmd User TelescopePreviewerLoaded setlocal wrap
 
 let g:sneak#label = 1
@@ -183,7 +186,8 @@ Plug 'vim-test/vim-test'
 Plug 'vim-vdebug/vdebug'
 
 " Completion
-Plug 'nvim-lua/completion-nvim'
+" Use fork because of issue: https://github.com/nvim-lua/completion-nvim/pull/333
+Plug 'garypippi/completion-nvim', { 'branch': 'when_text_insert_format_is_nil' }
 Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 
 " Snippets
