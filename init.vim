@@ -26,6 +26,7 @@ nnoremap <Leader>c :Telescope find_files cwd=%:p:h find_command=fdfind,--type,f,
 nnoremap <Leader>ac :Telescope lsp_code_actions<CR>
 nnoremap <Leader>lb :Telescope buffers<CR>
 nnoremap <Leader>ls :Telescope lsp_document_symbols<CR>
+nnoremap <Leader>lr :Telescope lsp_references<CR>
 nnoremap <Leader>gb :Telescope git_branches<CR>
 nnoremap <Leader>h :Telescope oldfiles<CR>
 nnoremap <Leader>t :Telescope lsp_workspace_symbols query=
