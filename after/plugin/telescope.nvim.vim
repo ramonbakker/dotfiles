@@ -9,12 +9,8 @@ require('telescope').setup {
             }
         },
         mappings = {
-            i = {
-                ["<C-q>"] = actions.send_to_qflist
-            },
-            n = {
-                ["<C-q>"] = actions.send_to_qflist
-            }
+            i = {},
+            n = {}
         }
     },
     extensions = {
