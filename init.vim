@@ -15,7 +15,7 @@ set nobackup
 set nowritebackup
 set signcolumn=yes
 set updatetime=300
-set completeopt=menuone,noinsert
+set completeopt=menuone,noselect
 
 inoremap jj <Esc>
 inoremap <C-M-i> <C-O>:call PhpInsertUse()<CR>
@@ -31,13 +31,6 @@ nnoremap <Leader>lm :Telescope media_files<CR>
 nnoremap <Leader>gb :Telescope git_branches<CR>
 nnoremap <Leader>h :Telescope oldfiles<CR>
 nnoremap <Leader>t :Telescope lsp_workspace_symbols query=
-
-" completion-nvim
-" Documentation: https://github.com/nvim-lua/completion-nvim#changing-completion-confirm-key
-imap <expr> <CR> pumvisible() ? complete_info()["selected"] != "-1" ?
-    \ "\<Plug>(completion_confirm_completion)" : "\<c-e>\<CR>" : "\<CR>"
-imap <C-j> <Plug>(completion_next_source)
-imap <C-k> <Plug>(completion_prev_source)
 
 " Sort selected lines by length
 vnoremap <Leader>sl !awk '{ print length, $0 }' \| sort -n \| cut -d ' ' -f 2-<CR>
@@ -56,6 +49,10 @@ nmap <Leader>ts :TestSuite<CR>
 nmap <Leader>tl :TestLast<CR>
 nmap <Leader>tv :TestVisit<CR>
 
+" nvim-compe
+imap <expr> <CR> compe#confirm(lexima#expand('<LT>CR>', 'i'))
+imap <expr> <C-e> compe#close('<C-e>')
+
 " Documentation: https://vim.fandom.com/wiki/Moving_lines_up_or_down
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -72,11 +69,6 @@ autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 
 autocmd BufWritePost *.php silent! lua vim.lsp.buf.formatting_sync()
 autocmd BufWritePost *.ts,*.html,*.scss,*.css,*.json silent! Prettier
-
-autocmd BufEnter * lua require'completion'.on_attach()
-
-" Documentation: https://github.com/nvim-lua/completion-nvim/issues/252
-autocmd BufEnter *.php :set iskeyword=@,48-57,_,192-255,$
 
 autocmd User TelescopePreviewerLoaded setlocal wrap
 
@@ -101,18 +93,20 @@ let g:fern#renderer = 'nerdfont'
 let g:test#strategy = 'neovim'
 let g:test#javascript#runner = 'jest'
 
-let g:completion_enable_snippet = 'UltiSnips'
-let g:completion_confirm_key = ""
-let g:completion_chain_complete_list = {
-    \'default': [
-    \   {'complete_items': ['lsp', 'snippet']},
-    \   {'complete_items': ['tabnine']},
-    \   {'mode': '<c-p>'},
-    \   {'mode': '<c-n>'}
-    \]
+let g:compe = {}
+let g:compe.source = {
+    \'ultisnips': v:true,
+    \'nvim_lsp': v:true,
+    \'path': v:true,
+    \'nvim-treesitter': v:true,
+    \'tabnine': v:true,
+    \'calc': v:true
 \}
-let g:completion_tabnine_sort_by_details = 1
-let g:completion_enable_auto_paren = 1
+let g:compe.preselect = 'always'
+let g:compe.source.tabnine = {}
+let g:compe.source.tabnine.max_line = 1000
+let g:compe.source.tabnine.max_num_results = 10
+let g:compe.source.tabnine.priority = 1
 
 call plug#begin(stdpath('data') . '/plugged')
 " Dependencies
@@ -169,7 +163,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
-Plug 'jiangmiao/auto-pairs'
+Plug 'cohama/lexima.vim'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -189,9 +183,8 @@ Plug 'vim-test/vim-test'
 Plug 'vim-vdebug/vdebug'
 
 " Completion
-" Use fork because of issue: https://github.com/nvim-lua/completion-nvim/pull/333
-Plug 'garypippi/completion-nvim', { 'branch': 'when_text_insert_format_is_nil' }
-Plug 'aca/completion-tabnine', { 'do': './install.sh' }
+Plug 'hrsh7th/nvim-compe'
+Plug 'tzachar/compe-tabnine', {'do': './install.sh'}
 
 " Snippets
 Plug 'SirVer/ultisnips'

@@ -48,6 +48,7 @@ $ cp tmux/timew-elapsed-day.sh ~/tmux/
 14. Execute in Neovim:
 ```
 :PlugInstall
-:TSInstall php typescript jsdoc html css graphql yaml json bash regex
+:TSInstall typescript jsdoc html css graphql yaml json bash regex
 ```
+Treesitter with PHP gives indentation problems: https://github.com/nvim-treesitter/nvim-treesitter/issues/462.
 15. Enjoy!

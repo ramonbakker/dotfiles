@@ -46,11 +46,14 @@ local on_attach = function(client, bufnr)
   end
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 -- Use a loop to conveniently both setup defined servers 
 -- and map buffer local keybindings when the language server attaches
 local servers = { "intelephense", "graphql", "html", "cssls", "tsserver", "jsonls", "yamlls" }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
+  nvim_lsp[lsp].setup { on_attach = on_attach, capabilities = capabilities }
 end
 
 local project_library_path = os.getenv( "HOME" ) .. "/.config/yarn/global/node_modules"
@@ -58,6 +61,7 @@ local cmd = { os.getenv( "HOME" ) .. "/.yarn/bin/ngserver", "--stdio", "--tsProb
 
 nvim_lsp.angularls.setup{
     cmd = cmd,
+    capabilities = capabilities,
     on_new_config = function(new_config,new_root_dir)
         new_config.cmd = cmd
     end,
