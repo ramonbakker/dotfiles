@@ -6,7 +6,7 @@ Configuration files to use with Neovim (and some other programs).
 2. (Recommended) Install [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#quick-installation).
 3. (Recommended) Install terminal packages:
 ```zsh
-$ sudo apt install zsh tmux konsole
+$ sudo apt install zsh tmux konsole timewarrior taskwarrior jq dateutils
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 4. (Recommended) Install [Powerlevel10k](https://github.com/romkatv/powerlevel10k).
@@ -37,9 +37,11 @@ plugins=(git laravel ng supervisor yarn composer zsh-autosuggestions vi-mode fzf
 export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git"
 ```
 12. (Recommended) Use fd-find instead of find for fzf, which gives a better performance: see https://github.com/junegunn/fzf#settings. You might need to change fd to fdfind in the configuration.
-13. Copy (or create a symbolic link) configuration file for tmux:
+13. Copy (or create symbolic links) files for tmux:
 ```zsh
 $ cp tmux/.tmux.conf ~/.tmux.conf
+$ mkdir ~/tmux
+$ cp tmux/timew-elapsed-day.sh ~/tmux/
 ```
 13. Open tmux (in Konsole) and install plugins (<kbd>Ctrl</kbd> + <kbd>b</kbd>, <kbd>I</kbd>).
 14. Execute in Neovim:
