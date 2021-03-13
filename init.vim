@@ -27,6 +27,7 @@ nnoremap <Leader>ac :Telescope lsp_code_actions<CR>
 nnoremap <Leader>lb :Telescope buffers<CR>
 nnoremap <Leader>ls :Telescope lsp_document_symbols<CR>
 nnoremap <Leader>lr :Telescope lsp_references<CR>
+nnoremap <Leader>lm :Telescope media_files<CR>
 nnoremap <Leader>gb :Telescope git_branches<CR>
 nnoremap <Leader>h :Telescope oldfiles<CR>
 nnoremap <Leader>t :Telescope lsp_workspace_symbols query=
@@ -129,6 +130,7 @@ Plug 'nvim-lua/popup.nvim' " nvim-telescope/telescope.nvim
 Plug 'nvim-lua/plenary.nvim' " nvim-telescope/telescope.nvim
 Plug 'nvim-telescope/telescope-fzy-native.nvim' " nvim-telescope/telescope.nvim
 Plug 'kyazdani42/nvim-web-devicons' " nvim-telescope/telescope.nvim
+Plug 'nvim-telescope/telescope-media-files.nvim' " nvim-telescope/telescope.nvim
 
 " Theming
 Plug 'sainnhe/sonokai'

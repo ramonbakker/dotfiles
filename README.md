@@ -14,6 +14,7 @@ $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/instal
 ```zsh
 $ yarn global add typescript prettier lehre @angular/language-server vscode-css-languageserver-bin graphql-language-service-cli vscode-html-languageserver-bin intelephense vscode-json-languageserver typescript typescript-language-server yaml-language-server
 $ sudo apt install ripgrep bat fd-find fzf fzy trash-cli
+$ pip3 install ueberzug
 $ mkdir -p ~/.local/bin
 $ ln -s /usr/bin/batcat ~/.local/bin/bat
 $ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
