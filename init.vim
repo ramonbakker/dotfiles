@@ -49,10 +49,6 @@ nmap <Leader>ts :TestSuite<CR>
 nmap <Leader>tl :TestLast<CR>
 nmap <Leader>tv :TestVisit<CR>
 
-" nvim-compe
-imap <expr> <CR> compe#confirm(lexima#expand('<LT>CR>', 'i'))
-imap <expr> <C-e> compe#close('<C-e>')
-
 " Documentation: https://vim.fandom.com/wiki/Moving_lines_up_or_down
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -212,6 +208,13 @@ Plug 'n0v1c3/vira', { 'do': './install.sh', 'on': 'ViraIssues' }
 " General
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
+
+" lexima.vim and nvim-compe
+let g:lexima_no_default_rules = v:true
+call lexima#set_default_rules()
+
+imap <expr> <CR> compe#confirm(lexima#expand('<LT>CR>', 'i'))
+imap <expr> <C-e> compe#close('<C-e>')
 
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
