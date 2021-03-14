@@ -94,15 +94,31 @@ let g:compe.source = {
     \'ultisnips': v:true,
     \'nvim_lsp': v:true,
     \'path': v:true,
-    \'nvim-treesitter': v:true,
-    \'tabnine': v:true,
-    \'calc': v:true
+    \'treesitter': v:true,
+    \'calc': v:true,
+    \'tabnine': v:true
 \}
 let g:compe.preselect = 'always'
+
+let g:compe.source.ultisnips = {}
+let g:compe.source.ultisnips.priority = 6
+
+let g:compe.source.nvim_lsp = {}
+let g:compe.source.nvim_lsp.priority = 5
+
+let g:compe.source.path = {}
+let g:compe.source.path.priority = 4
+
+let g:compe.source.treesitter = {}
+let g:compe.source.treesitter.priority = 3
+
 let g:compe.source.tabnine = {}
 let g:compe.source.tabnine.max_line = 1000
 let g:compe.source.tabnine.max_num_results = 10
-let g:compe.source.tabnine.priority = 1
+let g:compe.source.tabnine.priority = 2
+
+let g:compe.source.calc = {}
+let g:compe.source.calc.priority = 1
 
 call plug#begin(stdpath('data') . '/plugged')
 " Dependencies
