@@ -137,6 +137,7 @@ Plug 'nvim-lua/plenary.nvim' " nvim-telescope/telescope.nvim
 Plug 'nvim-telescope/telescope-fzy-native.nvim' " nvim-telescope/telescope.nvim
 Plug 'kyazdani42/nvim-web-devicons' " nvim-telescope/telescope.nvim
 Plug 'nvim-telescope/telescope-media-files.nvim' " nvim-telescope/telescope.nvim
+Plug 'hrsh7th/vim-vsnip' " hrsh7th/nvim-compe
 
 " Theming
 Plug 'sainnhe/sonokai'
