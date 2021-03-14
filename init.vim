@@ -176,7 +176,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
-Plug 'cohama/lexima.vim'
+Plug 'Raimondi/delimitMate'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -226,11 +226,8 @@ Plug 'n0v1c3/vira', { 'do': './install.sh', 'on': 'ViraIssues' }
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
-" lexima.vim and nvim-compe
-let g:lexima_no_default_rules = v:true
-call lexima#set_default_rules()
-
-imap <expr> <CR> compe#confirm(lexima#expand('<LT>CR>', 'i'))
+" delimitMate and nvim-compe
+imap <expr> <CR> compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })
 imap <expr> <C-e> compe#close('<C-e>')
 
 let g:sonokai_enable_italic = 1
