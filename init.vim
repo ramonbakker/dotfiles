@@ -64,7 +64,7 @@ command -nargs=* Rg Telescope grep_string search=<args>
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 
 autocmd BufWritePost *.php silent! lua vim.lsp.buf.formatting_sync()
-autocmd BufWritePost *.ts,*.html,*.scss,*.css,*.json silent! Prettier
+autocmd BufWritePre *.ts,*.html,*.scss,*.css,*.json silent! Prettier
 
 autocmd User TelescopePreviewerLoaded setlocal wrap
 
