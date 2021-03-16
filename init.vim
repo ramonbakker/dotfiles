@@ -63,7 +63,7 @@ command -nargs=* Rg Telescope grep_string search=<args>
 " Install php-cs-fixer with 'composer global require friendsofphp/php-cs-fixer'
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 
-autocmd BufWritePost *.php silent! lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.php silent! lua vim.lsp.buf.formatting_sync()
 autocmd BufWritePre *.ts,*.html,*.scss,*.css,*.json silent! Prettier
 
 autocmd User TelescopePreviewerLoaded setlocal wrap
