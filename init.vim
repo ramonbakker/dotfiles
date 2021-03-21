@@ -90,13 +90,13 @@ let g:test#javascript#runner = 'jest'
 
 let g:compe = {}
 let g:compe.source = {
-    \'ultisnips': v:true,
-    \'nvim_lsp': v:true,
-    \'path': v:true,
-    \'treesitter': v:true,
-    \'calc': v:true,
-    \'tabnine': v:true
-\}
+    \ 'ultisnips': v:true,
+    \ 'nvim_lsp': v:true,
+    \ 'path': v:true,
+    \ 'treesitter': v:true,
+    \ 'calc': v:true,
+    \ 'tabnine': v:true
+\ }
 let g:compe.preselect = 'always'
 
 let g:compe.source.ultisnips = {}
@@ -119,6 +119,24 @@ let g:compe.source.tabnine.priority = 2
 let g:compe.source.calc = {}
 let g:compe.source.calc.priority = 1
 
+let g:lightline = {
+    \ 'colorscheme': 'deus',
+    \ 'active': {
+    \   'left': [['mode', 'paste'],
+    \       ['git_branch', 'readonly', 'file_icon_and_path', 'modified']]
+    \ },
+    \ 'inactive': {
+    \   'left': [['file_icon_and_path']],
+    \   'right': [['lineinfo'], ['percent']]
+    \ },
+    \ 'component': {
+    \   'file_icon_and_path': '%<%{LightlineFileIconAndPath()}'
+    \ },
+    \ 'component_function': {
+    \   'git_branch': 'LightlineGitBranch'
+    \ }
+\ }
+
 call plug#begin(stdpath('data') . '/plugged')
 " Dependencies
 Plug 'tobyS/vmustache' " tobyS/pdv
@@ -127,7 +145,7 @@ Plug 'lambdalisue/nerdfont.vim' " lambdalisue/fern-renderer-nerdfont.vim
 Plug 'lambdalisue/fern-renderer-nerdfont.vim' " lambdalisue/fern.vim
 Plug 'lambdalisue/fern-git-status.vim' " lambdalisue/fern.vim
 Plug 'lambdalisue/fern-mapping-quickfix.vim' " lambdalisue/fern.vim
-Plug 'ryanoasis/vim-devicons' " vim-airline/vim-airline
+Plug 'ryanoasis/vim-devicons' " itchyny/lightline.vim
 Plug 'tommcdo/vim-fubitive' " tpope/vim-fugitive
 Plug 'tpope/vim-dispatch' " noahfrederick/vim-laravel
 Plug 'tpope/vim-projectionist' " noahfrederick/vim-laravel
@@ -140,8 +158,7 @@ Plug 'hrsh7th/vim-vsnip' " hrsh7th/nvim-compe
 
 " Theming
 Plug 'sainnhe/sonokai'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 
 " PHP
@@ -238,9 +255,6 @@ let g:sonokai_better_performance = 1
 
 colorscheme sonokai
 
-let g:airline_theme = 'sonokai'
-let g:airline_powerline_fonts = 1
-
 hi LineNr ctermfg=white guifg=white
 hi Normal guibg=None ctermbg=None
 
@@ -254,5 +268,5 @@ runtime nvim-treesitter.vimrc
 runtime nvim-lsp.vimrc
 runtime nvim-web-devicons.vimrc
 runtime fern.vimrc
-runtime airline.vimrc
+runtime lightline.vimrc
 runtime syntastic.vimrc
