@@ -18,7 +18,6 @@ set updatetime=300
 set completeopt=menuone,noselect
 
 inoremap jj <Esc>
-inoremap <C-M-i> <C-O>:call PhpInsertUse()<CR>
 nnoremap <F2> :Fern . -reveal=% -drawer -toggle -width=40<CR>
 nnoremap <F3> :call pdv#DocumentWithSnip()<CR>
 nnoremap <C-p> :Telescope find_files find_command=fdfind,--type,f,--hidden,--exclude,.git<CR>
