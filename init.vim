@@ -136,6 +136,17 @@ let g:lightline = {
     \   'git_branch': 'LightlineGitBranch'
     \ }
 \ }
+let g:lightline.tab_component_function = {
+    \ 'filename': 'lightline#tab#filename',
+    \ 'modified': 'lightline#tab#modified',
+    \ 'readonly': 'lightline#tab#readonly',
+    \ 'tabnum': 'lightline#tab#tabnum',
+    \ 'file_icon_and_path': 'LightlineTabActiveFileIconAndName'
+\ }
+let g:lightline.tab = {
+    \ 'active': ['tabnum', 'file_icon_and_path', 'modified'],
+    \ 'inactive': ['tabnum', 'file_icon_and_path', 'modified'],
+\ }
 
 call plug#begin(stdpath('data') . '/plugged')
 " Dependencies
