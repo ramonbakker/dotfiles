@@ -48,7 +48,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_exec([[
     augroup lsp_signature_help
       autocmd! * <buffer>
-      autocmd CursorHoldI <buffer> lua vim.lsp.buf.signature_help()
+      autocmd CursorHoldI <buffer> silent! lua vim.lsp.buf.signature_help()
     augroup END
   ]], false)
 end
