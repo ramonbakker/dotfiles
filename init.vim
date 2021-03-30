@@ -35,11 +35,8 @@ nnoremap <Leader>t :Telescope lsp_workspace_symbols query=
 vnoremap <Leader>sl !awk '{ print length, $0 }' \| sort -n \| cut -d ' ' -f 2-<CR>
 vnoremap <Leader>slr !awk '{ print length, $0 }' \| sort -nr \| cut -d ' ' -f 2-<CR>
 
-" vim-sneak
-nmap <Leader>s <Plug>Sneak_s
-nmap <Leader>S <Plug>Sneak_S
-nmap <Leader>; <Plug>Sneak_;
-nmap <Leader>, <Plug>Sneak_,
+" hop.nvim
+nmap <Leader>hw :HopWord<CR>
 
 " vim-test
 nmap <Leader>tn :TestNearest<CR>
@@ -67,9 +64,6 @@ autocmd BufWritePre *.ts,*.html,*.scss,*.css,*.json silent! Prettier
 
 autocmd User TelescopePreviewerLoaded setlocal wrap
 
-let g:sneak#label = 1
-let g:sneak#f_reset = 0
-let g:sneak#t_reset = 0
 let g:camelcasemotion_key = '<Leader>'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:jsonpath_register = 'j'
@@ -237,7 +231,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Motions
 Plug 'bkad/CamelCaseMotion'
-Plug 'justinmk/vim-sneak'
+Plug 'phaazon/hop.nvim'
 
 " Git
 Plug 'airblade/vim-gitgutter'
