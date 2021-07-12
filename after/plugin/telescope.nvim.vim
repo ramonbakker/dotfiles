@@ -3,14 +3,22 @@ local actions = require('telescope.actions')
 
 require('telescope').setup {
     defaults = {
-        layout_defaults = {
+        layout_config = {
             horizontal = {
                 preview_width = 0.4
             }
         },
         mappings = {
-            i = {},
-            n = {}
+            i = {
+                ['<C-s>'] = actions.send_selected_to_qflist + actions.open_qflist
+            },
+            n = {
+                ['<C-s>'] = actions.send_selected_to_qflist + actions.open_qflist
+            },
+            i = {
+                ['<C-j>'] = require('telescope.actions').cycle_history_next,
+                ['<C-k>'] = require('telescope.actions').cycle_history_prev
+            }
         }
     },
     extensions = {
