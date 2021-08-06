@@ -5,7 +5,9 @@ require('telescope').setup {
     defaults = {
         layout_config = {
             horizontal = {
-                preview_width = 0.4
+                preview_width = 0.45,
+                width = 0.95,
+                height = 0.95
             }
         },
         mappings = {
