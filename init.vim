@@ -85,37 +85,6 @@ let g:fern#renderer = 'nerdfont'
 let g:test#strategy = 'neovim'
 let g:test#javascript#runner = 'jest'
 
-let g:compe = {}
-let g:compe.source = {
-    \ 'ultisnips': v:true,
-    \ 'nvim_lsp': v:true,
-    \ 'path': v:true,
-    \ 'treesitter': v:true,
-    \ 'calc': v:true,
-    \ 'tabnine': v:true
-\ }
-let g:compe.preselect = 'always'
-
-let g:compe.source.ultisnips = {}
-let g:compe.source.ultisnips.priority = 6
-
-let g:compe.source.nvim_lsp = {}
-let g:compe.source.nvim_lsp.priority = 5
-
-let g:compe.source.path = {}
-let g:compe.source.path.priority = 4
-
-let g:compe.source.treesitter = {}
-let g:compe.source.treesitter.priority = 3
-
-let g:compe.source.tabnine = {}
-let g:compe.source.tabnine.max_line = 1000
-let g:compe.source.tabnine.max_num_results = 10
-let g:compe.source.tabnine.priority = 2
-
-let g:compe.source.calc = {}
-let g:compe.source.calc.priority = 1
-
 let g:lightline = {
     \ 'colorscheme': 'deus',
     \ 'active': {
@@ -162,7 +131,13 @@ Plug 'nvim-lua/plenary.nvim' " nvim-telescope/telescope.nvim
 Plug 'nvim-telescope/telescope-fzy-native.nvim' " nvim-telescope/telescope.nvim
 Plug 'kyazdani42/nvim-web-devicons' " nvim-telescope/telescope.nvim
 Plug 'nvim-telescope/telescope-media-files.nvim' " nvim-telescope/telescope.nvim
-Plug 'hrsh7th/vim-vsnip' " hrsh7th/nvim-compe
+Plug 'hrsh7th/cmp-nvim-lsp' " hrsh7th/nvim-cmp
+Plug 'hrsh7th/cmp-calc' " hrsh7th/nvim-cmp
+Plug 'hrsh7th/cmp-path' " hrsh7th/nvim-cmp
+Plug 'hrsh7th/cmp-buffer' " hrsh7th/nvim-cmp
+Plug 'hrsh7th/cmp-nvim-lua' " hrsh7th/nvim-cmp
+Plug 'quangnguyen30192/cmp-nvim-ultisnips' " hrsh7th/nvim-cmp
+Plug 'onsails/lspkind-nvim' " hrsh7th/nvim-cmp
 
 " Theming
 Plug 'sainnhe/sonokai'
@@ -220,8 +195,7 @@ Plug 'vim-test/vim-test'
 Plug 'vim-vdebug/vdebug'
 
 " Completion
-Plug 'hrsh7th/nvim-compe'
-Plug 'tzachar/compe-tabnine', {'do': './install.sh'}
+Plug 'hrsh7th/nvim-cmp'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -250,10 +224,6 @@ Plug 'n0v1c3/vira', { 'do': './install.sh', 'on': 'ViraIssues' }
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
-" delimitMate and nvim-compe
-imap <expr> <CR> compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })
-imap <expr> <C-e> compe#close('<C-e>')
-
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
 let g:sonokai_sign_column_background = 'none'
@@ -264,7 +234,7 @@ let g:sonokai_better_performance = 1
 colorscheme sonokai
 
 hi LineNr ctermfg=white guifg=white
-hi Normal guibg=None ctermbg=None
+hi Normal ctermbg=None guibg=None 
 
 hi IndentGuidesOdd ctermbg=black
 hi IndentGuidesEven ctermbg=black
@@ -275,6 +245,7 @@ hi link LspDiagnosticsVirtualTextWarning Orange
 runtime nvim-treesitter.vimrc
 runtime nvim-lsp.vimrc
 runtime nvim-web-devicons.vimrc
+runtime nvim-cmp.vimrc
 runtime fern.vimrc
 runtime lightline.vimrc
 runtime syntastic.vimrc
