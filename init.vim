@@ -127,7 +127,7 @@ Plug 'tommcdo/vim-fubitive' " tpope/vim-fugitive
 Plug 'tpope/vim-dispatch' " noahfrederick/vim-laravel
 Plug 'tpope/vim-projectionist' " noahfrederick/vim-laravel
 Plug 'nvim-lua/popup.nvim' " nvim-telescope/telescope.nvim
-Plug 'nvim-lua/plenary.nvim' " nvim-telescope/telescope.nvim
+Plug 'nvim-lua/plenary.nvim' " nvim-telescope/telescope.nvim, lewis6991/gitsigns.nvim
 Plug 'nvim-telescope/telescope-fzy-native.nvim' " nvim-telescope/telescope.nvim
 Plug 'kyazdani42/nvim-web-devicons' " nvim-telescope/telescope.nvim
 Plug 'nvim-telescope/telescope-media-files.nvim' " nvim-telescope/telescope.nvim
@@ -211,7 +211,7 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'phaazon/hop.nvim'
 
 " Git
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 
@@ -249,3 +249,4 @@ runtime nvim-cmp.vimrc
 runtime fern.vimrc
 runtime lightline.vimrc
 runtime syntastic.vimrc
+runtime gitsigns.vimrc
