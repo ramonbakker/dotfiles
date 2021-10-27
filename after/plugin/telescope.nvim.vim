@@ -11,15 +11,13 @@ require('telescope').setup {
             }
         },
         mappings = {
-            i = {
-                ['<C-s>'] = actions.send_selected_to_qflist + actions.open_qflist
-            },
             n = {
                 ['<C-s>'] = actions.send_selected_to_qflist + actions.open_qflist
             },
             i = {
                 ['<C-j>'] = require('telescope.actions').cycle_history_next,
-                ['<C-k>'] = require('telescope.actions').cycle_history_prev
+                ['<C-k>'] = require('telescope.actions').cycle_history_prev,
+                ['<C-s>'] = actions.send_selected_to_qflist + actions.open_qflist
             }
         }
     },
