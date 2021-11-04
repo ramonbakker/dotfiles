@@ -177,6 +177,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
 Plug 'Raimondi/delimitMate'
+Plug 'github/copilot.vim'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
