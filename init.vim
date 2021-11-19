@@ -15,7 +15,6 @@ set nobackup
 set nowritebackup
 set signcolumn=yes
 set updatetime=300
-set completeopt=menuone,noselect
 set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize,resize
 
 inoremap jj <Esc>
