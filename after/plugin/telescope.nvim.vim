@@ -1,5 +1,6 @@
 lua <<EOF
 local actions = require('telescope.actions')
+local action_layout = require('telescope.actions.layout')
 
 require('telescope').setup {
     defaults = {
@@ -12,12 +13,14 @@ require('telescope').setup {
         },
         mappings = {
             n = {
-                ['<C-s>'] = actions.send_selected_to_qflist + actions.open_qflist
+                ['<C-s>'] = actions.send_selected_to_qflist + actions.open_qflist,
+                ['<C-h>'] = action_layout.toggle_preview
             },
             i = {
-                ['<C-j>'] = require('telescope.actions').cycle_history_next,
-                ['<C-k>'] = require('telescope.actions').cycle_history_prev,
-                ['<C-s>'] = actions.send_selected_to_qflist + actions.open_qflist
+                ['<C-j>'] = actions.cycle_history_next,
+                ['<C-k>'] = actions.cycle_history_prev,
+                ['<C-s>'] = actions.send_selected_to_qflist + actions.open_qflist,
+                ['<C-h>'] = action_layout.toggle_preview
             }
         }
     },
