@@ -21,6 +21,8 @@ set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize,resize
 inoremap jj <Esc>
 nnoremap <Leader>f :Fern . -reveal=% -drawer -toggle -width=40<CR>
 nnoremap <F3> :call pdv#DocumentWithSnip()<CR>
+nnoremap <Leader>, :cprevious<CR>
+nnoremap <Leader>. :cnext<CR>
 nnoremap <C-p> :Telescope find_files find_command=fdfind,--type,f,--hidden,--exclude,.git<CR>
 nnoremap <Leader><C-p> :Telescope find_files find_command=fdfind,--type,f,--hidden,--exclude,.git,--no-ignore-vcs<CR>
 nnoremap <Leader>c :Telescope find_files cwd=%:p:h find_command=fdfind,--type,f,--hidden,--follow,--exclude,.git<CR>
