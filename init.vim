@@ -30,9 +30,12 @@ nnoremap <Leader>ac :Telescope lsp_code_actions<CR>
 nnoremap <Leader>lb :Telescope buffers<CR>
 nnoremap <Leader>li :Telescope lsp_implementations<CR>
 nnoremap <Leader>ls :Telescope lsp_document_symbols<CR>
-nnoremap <Leader>lr :Telescope lsp_references<CR>
+nnoremap <Leader>lr :silent Telescope lsp_references<CR>
+nnoremap <Leader>lt :Telescope loclist<CR>
 nnoremap <Leader>lm :Telescope media_files<CR>
+nnoremap <Leader>lq :Telescope quickfix<CR>
 nnoremap <Leader>gb :Telescope git_branches<CR>
+nnoremap <Leader>gc :Telescope git_commits<CR>
 nnoremap <Leader>h :Telescope oldfiles<CR>
 nnoremap <Leader>t :Telescope lsp_workspace_symbols query=
 
