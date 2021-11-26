@@ -27,6 +27,8 @@ nnoremap <Leader><C-p> :Telescope find_files find_command=fdfind,--type,f,--hidd
 nnoremap <Leader>c :Telescope find_files cwd=%:p:h find_command=fdfind,--type,f,--hidden,--follow,--exclude,.git,--no-ignore-vcs<CR>
 nnoremap <Leader>m :Telescope marks<CR>
 nnoremap <Leader>ac :Telescope lsp_code_actions<CR>
+nnoremap <Leader>hc :Telescope command_history<CR>
+nnoremap <Leader>hs :Telescope search_history<CR>
 nnoremap <Leader>lb :Telescope buffers<CR>
 nnoremap <Leader>li :Telescope lsp_implementations<CR>
 nnoremap <Leader>ls :Telescope lsp_document_symbols<CR>
