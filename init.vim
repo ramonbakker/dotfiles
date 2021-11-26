@@ -221,6 +221,9 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 
+" Database
+Plug 'tpope/vim-dadbod'
+
 " Project management
 Plug 'vimwiki/vimwiki'
 Plug 'tools-life/taskwiki'
