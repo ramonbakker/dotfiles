@@ -17,7 +17,6 @@ set signcolumn=yes
 set updatetime=300
 set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize,resize
 
-inoremap jj <Esc>
 nnoremap <Leader>f :Fern . -reveal=% -drawer -toggle -width=40<CR>
 nnoremap <F3> :call pdv#DocumentWithSnip()<CR>
 nnoremap <Leader>, :cprevious<CR>
