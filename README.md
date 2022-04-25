@@ -38,9 +38,11 @@ plugins=(git laravel ng supervisor yarn composer zsh-autosuggestions vi-mode fzf
 export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git"
 ```
 12. (Recommended) Use fd-find instead of find for fzf, which gives a better performance: see https://github.com/junegunn/fzf#settings. You might need to change fd to fdfind in the configuration.
-13. Copy (or create symbolic links) files for tmux:
+13. Copy (or create symbolic links) files for tmux, yabai and skhd:
 ```zsh
 $ cp tmux/.tmux.conf ~/.tmux.conf
+$ cp yabai/.yabairc ~/.yabairc
+$ cp skhd/.skhdrc ~/.skhdrc
 $ mkdir ~/tmux
 $ cp tmux/timew-elapsed-day.sh ~/tmux/
 ```
