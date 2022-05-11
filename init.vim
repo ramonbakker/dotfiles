@@ -31,6 +31,7 @@ nnoremap <Leader>hs :Telescope search_history<CR>
 nnoremap <Leader>lb :Telescope buffers<CR>
 nnoremap <Leader>li :Telescope lsp_implementations<CR>
 nnoremap <Leader>ls :Telescope lsp_document_symbols<CR>
+nnoremap <Leader>lf :Telescope lsp_document_symbols symbols=method<CR>
 nnoremap <Leader>lr :silent Telescope lsp_references<CR>
 nnoremap <Leader>lt :Telescope loclist<CR>
 nnoremap <Leader>lm :Telescope media_files<CR>
