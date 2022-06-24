@@ -63,6 +63,21 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
+" nvim-dap
+nnoremap <silent> <F5> <Cmd>lua require'dap'.continue()<CR>
+nnoremap <silent> <F10> <Cmd>lua require'dap'.step_over()<CR>
+nnoremap <silent> <F11> <Cmd>lua require'dap'.step_into()<CR>
+nnoremap <silent> <F12> <Cmd>lua require'dap'.step_out()<CR>
+nnoremap <silent> <Leader>sb <Cmd>lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <silent> <Leader>sB <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nnoremap <silent> <Leader>lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.open()<CR>
+nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
+nnoremap <silent> <Leader>dt <Cmd>lua require'dap'.terminate()<CR>
+
+nnoremap <silent> <Leader>do <Cmd>lua require'dapui'.open()<CR>
+nnoremap <silent> <Leader>dc <Cmd>lua require'dapui'.close()<CR>
+
 command -nargs=* Rg Telescope grep_string search=<args>
 
 " Configuration for stephpy/vim-php-cs-fixer
@@ -199,7 +214,9 @@ Plug 'lambdalisue/fern.vim'
 Plug 'vim-test/vim-test'
 
 " Debugging
-Plug 'vim-vdebug/vdebug'
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
 
 " Completion
 Plug 'hrsh7th/nvim-cmp'
@@ -254,6 +271,9 @@ hi link LspDiagnosticsVirtualTextWarning Orange
 
 runtime nvim-treesitter.vimrc
 runtime nvim-lsp.vimrc
+runtime nvim-dap.vimrc
+runtime nvim-dapui.vimrc
+runtime nvim-dap-virtual-text.vimrc
 runtime nvim-web-devicons.vimrc
 runtime nvim-cmp.vimrc
 runtime fern.vimrc
