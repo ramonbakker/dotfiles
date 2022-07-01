@@ -77,6 +77,7 @@ nnoremap <silent> <Leader>dt <Cmd>lua require'dap'.terminate()<CR>
 
 nnoremap <silent> <Leader>do <Cmd>lua require'dapui'.open()<CR>
 nnoremap <silent> <Leader>dc <Cmd>lua require'dapui'.close()<CR>
+nnoremap <silent> <Leader>dC <Cmd>lua require'dapui'.close(); require'dap'.terminate()<CR>
 
 command -nargs=* Rg Telescope grep_string search=<args>
 
