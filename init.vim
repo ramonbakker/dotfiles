@@ -210,7 +210,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " File management
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern.vim', {'branch:': 'main'}
 
 " Testing
 Plug 'vim-test/vim-test'
