@@ -198,7 +198,7 @@ Plug 'lervag/vimtex'
 
 " Utilities
 Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-surround'
+Plug 'kylechui/nvim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
 Plug 'Raimondi/delimitMate'
@@ -280,6 +280,7 @@ runtime nvim-dapui.vimrc
 runtime nvim-dap-virtual-text.vimrc
 runtime nvim-web-devicons.vimrc
 runtime nvim-cmp.vimrc
+runtime nvim-surround.vimrc
 runtime fern.vimrc
 runtime lightline.vimrc
 runtime syntastic.vimrc
