@@ -91,6 +91,8 @@ autocmd BufWritePre *.ts,*.html,*.scss,*.css,*.json silent! Prettier
 
 autocmd User TelescopePreviewerLoaded setlocal wrap
 
+au TextYankPost * silent! lua vim.highlight.on_yank {timeout=150}
+
 let g:camelcasemotion_key = '<Leader>'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:jsonpath_register = 'j'
