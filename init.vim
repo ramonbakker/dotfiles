@@ -118,7 +118,7 @@ let g:lightline = {
     \       ['git_branch', 'readonly', 'file_icon_and_path', 'modified']]
     \ },
     \ 'inactive': {
-    \   'left': [['file_icon_and_path']],
+    \   'left': [['file_icon_and_path', 'modified']],
     \   'right': [['lineinfo'], ['percent']]
     \ },
     \ 'component': {
