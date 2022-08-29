@@ -25,7 +25,7 @@ nnoremap <C-p> :Telescope find_files find_command=fdfind,--type,f,--hidden,--exc
 nnoremap <Leader><C-p> :Telescope find_files find_command=fdfind,--type,f,--hidden,--exclude,.git,--no-ignore-vcs<CR>
 nnoremap <Leader>c :Telescope find_files cwd=%:p:h find_command=fdfind,--type,f,--hidden,--follow,--exclude,.git,--no-ignore-vcs<CR>
 nnoremap <Leader>m :Telescope marks<CR>
-nnoremap <Leader>ac :Telescope lsp_code_actions<CR>
+nnoremap <Leader>ac :lua vim.lsp.buf.code_action()<CR>
 nnoremap <Leader>hc :Telescope command_history<CR>
 nnoremap <Leader>hs :Telescope search_history<CR>
 nnoremap <Leader>lb :Telescope buffers<CR>
@@ -157,6 +157,7 @@ Plug 'nvim-lua/plenary.nvim' " nvim-telescope/telescope.nvim, lewis6991/gitsigns
 Plug 'nvim-telescope/telescope-fzy-native.nvim' " nvim-telescope/telescope.nvim
 Plug 'kyazdani42/nvim-web-devicons' " nvim-telescope/telescope.nvim
 Plug 'nvim-telescope/telescope-media-files.nvim' " nvim-telescope/telescope.nvim
+Plug 'nvim-telescope/telescope-ui-select.nvim' " nvim-telescope/telescope.nvim
 Plug 'hrsh7th/cmp-nvim-lsp' " hrsh7th/nvim-cmp
 Plug 'hrsh7th/cmp-calc' " hrsh7th/nvim-cmp
 Plug 'hrsh7th/cmp-path' " hrsh7th/nvim-cmp
