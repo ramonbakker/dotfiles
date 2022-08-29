@@ -41,6 +41,7 @@ nnoremap <Leader>gb :Telescope git_branches<CR>
 nnoremap <Leader>gc :Telescope git_commits<CR>
 nnoremap <Leader>h :Telescope oldfiles<CR>
 nnoremap <Leader>t :Telescope lsp_workspace_symbols query=
+nnoremap <Leader>/ :Telescope current_buffer_fuzzy_find<CR>
 
 " Sort selected lines by length
 vnoremap <Leader>sl !awk '{ print length, $0 }' \| sort -n \| cut -d ' ' -f 2-<CR>
