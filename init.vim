@@ -209,7 +209,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'neovim/nvim-lspconfig'
 
 " Syntax
-Plug 'vim-syntastic/syntastic'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " File management
