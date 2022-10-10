@@ -12,7 +12,7 @@ $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/instal
 4. (Recommended) Install [Powerlevel10k](https://github.com/romkatv/powerlevel10k).
 5. Install dependencies:
 ```zsh
-$ yarn global add typescript prettier lehre @angular/language-server vscode-css-languageserver-bin graphql-language-service-cli vscode-html-languageserver-bin intelephense vscode-json-languageserver typescript typescript-language-server vls yaml-language-server ls_emmet dockerfile-language-server-nodejs
+$ yarn global add typescript prettier lehre @angular/language-server vscode-css-languageserver-bin graphql-language-service-cli vscode-html-languageserver-bin intelephense vscode-json-languageserver typescript typescript-language-server vls yaml-language-server emmet-ls dockerfile-language-server-nodejs
 $ sudo apt install ripgrep bat fd-find fzf fzy trash-cli
 $ pip3 install ueberzug
 $ mkdir -p ~/.local/bin
