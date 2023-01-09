@@ -24,31 +24,50 @@ lua <<EOF
     },
 
     -- You should specify your *installed* sources.
-    sources = {
+    sources = cmp.config.sources({
       { name = 'ultisnips' },
       { name = 'nvim_lsp' },
+      { name = 'dap' },
       { name = 'path' },
-      { name = 'treesitter' },
       { name = 'buffer' },
       { name = 'calc' },
-    },
+      { name = 'nvim_lsp_signature_help' },
+    }),
+
+    enabled = function ()
+      return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+        or require("cmp_dap").is_dap_buffer()
+    end,
 
     completion = {
       completeopt = 'menu,menuone,noinsert',
-      documentation = {}
     },
 
     formatting = {
       format = function(entry, vim_item)
       vim_item.kind = lspkind.presets.default[vim_item.kind] .. ' ' .. vim_item.kind
+
       vim_item.menu = ({
         ultisnips = '[Ultisnips]',
         nvim_lsp = '[LSP]',
+        dap = '[DAP]',
         path = '[Path]',
         treesitter = '[Treesitter]',
         buffer = '[Buffer]',
         calc = '[Calc]',
       })[entry.source.name]
+
+      local detail = entry:get_completion_item().detail
+
+      if detail == nil then
+          detail = ''
+      else
+          detail = ' ' .. detail
+      end
+
+      if vim_item.menu ~= nil then
+          vim_item.menu = vim_item.menu .. detail
+      end
 
       return vim_item
       end

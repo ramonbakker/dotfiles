@@ -14,7 +14,7 @@ set hidden
 set nobackup
 set nowritebackup
 set signcolumn=yes
-set updatetime=300
+set updatetime=100
 set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize,resize
 
 nnoremap <Leader>f :Fern . -reveal=% -drawer -toggle -width=40<CR>
@@ -163,7 +163,9 @@ Plug 'hrsh7th/cmp-nvim-lsp' " hrsh7th/nvim-cmp
 Plug 'hrsh7th/cmp-calc' " hrsh7th/nvim-cmp
 Plug 'hrsh7th/cmp-path' " hrsh7th/nvim-cmp
 Plug 'hrsh7th/cmp-buffer' " hrsh7th/nvim-cmp
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help' " hrsh7th/nvim-cmp
 Plug 'hrsh7th/cmp-nvim-lua' " hrsh7th/nvim-cmp
+Plug 'rcarriga/cmp-dap' " hrsh7th/nvim-cmp
 Plug 'quangnguyen30192/cmp-nvim-ultisnips' " hrsh7th/nvim-cmp
 Plug 'onsails/lspkind-nvim' " hrsh7th/nvim-cmp
 
