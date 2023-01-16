@@ -22,6 +22,8 @@ $ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plu
 $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 $ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+$ curl https://raw.githubusercontent.com/eruizc-dev/jdtls-launcher/master/install.sh | bash
+$ pip3 install python-lsp-server
 ```
 6. Copy (or create a symbolic link) configuration files for Konsole (make sure to edit Konsole settings afterwards):
 ```zsh
@@ -50,6 +52,6 @@ $ cp tmux/timew-elapsed-day.sh ~/tmux/
 14. Execute in Neovim:
 ```
 :PlugInstall
-:TSInstall php typescript jsdoc html css graphql yaml json bash regex
+:TSInstall php typescript jsdoc html css graphql yaml json bash regex http
 ```
 15. Enjoy!
