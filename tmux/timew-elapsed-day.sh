@@ -26,6 +26,7 @@ do
     TIMEW_DAY_TOTAL=$(($TIMEW_DAY_TOTAL + $CURRENT_DAY_ENTRY_DIFF))
 
     CURRENT_DAY_ENTRY_TAG=`echo $TIMEW_EXPORT | $JQ_BIN --argjson day_entry_number $DAY_ENTRY_NUMBER '.[$day_entry_number].tags[0]'`
+    CURRENT_DAY_ENTRY_TAG=`echo $CURRENT_DAY_ENTRY_TAG | sed -e 's/"//g'`
 
     DAY_ENTRY_NUMBER=$(($DAY_ENTRY_NUMBER + 1))
     CURRENT_DAY_ENTRY=`echo $TIMEW_EXPORT | $JQ_BIN --argjson day_entry_number $DAY_ENTRY_NUMBER '.[$day_entry_number]'`
