@@ -16,6 +16,8 @@ set nowritebackup
 set signcolumn=yes
 set updatetime=100
 set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize,resize
+nnoremap <Space> <Nop>
+let g:mapleader = "\<Space>"
 
 nnoremap <Leader>f :Fern . -reveal=% -drawer -toggle -width=40<CR>
 nnoremap <F3> :call pdv#DocumentWithSnip()<CR>
