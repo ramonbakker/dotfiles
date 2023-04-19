@@ -1,0 +1,42 @@
+set number relativenumber
+set colorcolumn=80,120
+set termguicolors
+set cursorline
+set listchars=tab:>·,trail:~,extends:>,precedes:<,space:·
+set list
+set clipboard=unnamed
+set clipboard=unnamedplus
+set undofile
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set hidden
+set nobackup
+set nowritebackup
+set signcolumn=yes
+set updatetime=100
+set completeopt=menuone,noselect
+
+let g:mapleader = "\<Space>"
+nnoremap <Space> <Nop>
+
+let g:highlightedyank_highlight_duration = "100"
+
+nmap <Leader>f <Action>(ActivateProjectToolWindow)
+nmap <Leader>c <Action>(CompileProject)
+nmap <Leader>r <Action>(Run)
+nmap <Leader>d <Action>(Debug)
+nmap <Leader>lg <Action>(FindInPath)
+nmap <C-p> <Action>(GotoFile)
+
+nmap <Leader>sb <Action>(ToggleLineBreakpoint)
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'machakann/vim-highlightedyank'
