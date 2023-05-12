@@ -247,6 +247,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Motions
 Plug 'bkad/CamelCaseMotion'
 Plug 'phaazon/hop.nvim'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'
