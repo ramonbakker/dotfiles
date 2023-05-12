@@ -22,12 +22,16 @@ nnoremap <Space> <Nop>
 
 let g:highlightedyank_highlight_duration = "100"
 
-nmap <Leader>f <Action>(ActivateProjectToolWindow)
-nmap <Leader>c <Action>(CompileProject)
+nmap <Leader>f :NERDTreeToggle<CR>
+nmap <Leader>pc <Action>(CompileProject)
 nmap <Leader>r <Action>(Run)
 nmap <Leader>d <Action>(Debug)
 nmap <Leader>lg <Action>(FindInPath)
+nmap <Leader>tn <Action>(RunClass)
 nmap <C-p> <Action>(GotoFile)
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap <Leader>oi <Action>(OptimizeImports)
 
 nmap <Leader>sb <Action>(ToggleLineBreakpoint)
 
