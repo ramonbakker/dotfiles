@@ -198,6 +198,9 @@ Plug 'ap/vim-css-color'
 " GraphQL
 Plug 'jparise/vim-graphql'
 
+" Kotlin
+Plug 'udalov/kotlin-vim'
+
 " JSON
 Plug 'mogelbrod/vim-jsonpath', { 'on': 'JsonPath' }
 
