@@ -1,4 +1,5 @@
 lua <<EOF
+  local cmp_autopairs = require('nvim-autopairs.completion.cmp')
   local cmp = require('cmp')
   local lspkind = require('lspkind')
   cmp.setup {
@@ -44,35 +45,25 @@ lua <<EOF
     },
 
     formatting = {
-      format = function(entry, vim_item)
-      vim_item.kind = lspkind.presets.default[vim_item.kind] .. ' ' .. vim_item.kind
-
-      vim_item.menu = ({
-        ultisnips = '[Ultisnips]',
-        nvim_lsp = '[LSP]',
-        dap = '[DAP]',
-        path = '[Path]',
-        treesitter = '[Treesitter]',
-        buffer = '[Buffer]',
-        calc = '[Calc]',
-      })[entry.source.name]
-
-      local detail = entry:get_completion_item().detail
-
-      if detail == nil then
-          detail = ''
-      else
-          detail = ' ' .. detail
-      end
-
-      if vim_item.menu ~= nil then
-          vim_item.menu = vim_item.menu .. detail
-      end
-
-      return vim_item
-      end
+      format = lspkind.cmp_format({
+        mode = "symbol_text",
+        menu = {
+          ultisnips = '[Ultisnips]',
+          nvim_lsp = '[LSP]',
+          dap = '[DAP]',
+          path = '[Path]',
+          treesitter = '[Treesitter]',
+          buffer = '[Buffer]',
+          calc = '[Calc]',
+        }
+      })
     }
   }
+
+  cmp.event:on(
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
+  )
 EOF
 
 " Setup buffer configuration (nvim-lua source only enables in Lua filetype).

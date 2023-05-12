@@ -207,7 +207,7 @@ Plug 'mattn/emmet-vim'
 Plug 'kylechui/nvim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
-Plug 'Raimondi/delimitMate'
+Plug 'windwp/nvim-autopairs'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -278,6 +278,7 @@ hi IndentGuidesEven ctermbg=black
 hi link LspDiagnosticsVirtualTextError Red
 hi link LspDiagnosticsVirtualTextWarning Orange
 
+runtime nvim-autopairs.vimrc
 runtime nvim-treesitter.vimrc
 runtime nvim-lsp.vimrc
 runtime nvim-dap.vimrc
