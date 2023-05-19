@@ -241,7 +241,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 
 " Code style helpers
 Plug 'stephpy/vim-php-cs-fixer'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Motions
