@@ -60,6 +60,7 @@ local cmd = { os.getenv( "HOME" ) .. "/.yarn/bin/ngserver", "--stdio", "--tsProb
 nvim_lsp.angularls.setup{
     cmd = cmd,
     capabilities = capabilities,
+    root_dir = nvim_lsp.util.root_pattern("angular.json", "nx.json"),
     on_new_config = function(new_config,new_root_dir)
         new_config.cmd = cmd
     end,
