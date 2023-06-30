@@ -47,6 +47,8 @@ nnoremap <Leader>h :Telescope oldfiles<CR>
 nnoremap <Leader>t :Telescope lsp_workspace_symbols query=
 nnoremap <Leader>/ :Telescope current_buffer_fuzzy_find<CR>
 
+nnoremap <Leader>ih :lua vim.lsp.buf.inlay_hint(0)<CR>
+
 " Sort selected lines by length
 vnoremap <Leader>sl !awk '{ print length, $0 }' \| sort -n \| cut -d ' ' -f 2-<CR>
 vnoremap <Leader>slr !awk '{ print length, $0 }' \| sort -nr \| cut -d ' ' -f 2-<CR>
@@ -280,6 +282,7 @@ hi Normal ctermbg=None guibg=None
 hi IndentGuidesOdd ctermbg=black
 hi IndentGuidesEven ctermbg=black
 
+hi LspInlayHint ctermfg=grey guifg=grey cterm=italic,bold gui=italic,bold
 hi link LspDiagnosticsVirtualTextError Red
 hi link LspDiagnosticsVirtualTextWarning Orange
 
