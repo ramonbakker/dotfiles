@@ -45,11 +45,15 @@ local on_attach = function(client, bufnr)
       augroup END
     ]], false)
   end
+
+  if client.server_capabilities.inlayHintProvider then
+    vim.lsp.buf.inlay_hint(bufnr, true)
+  end
 end
 
 -- Use a loop to conveniently both setup defined servers 
 -- and map buffer local keybindings when the language server attaches
-local servers = { "intelephense", "graphql", "html", "kotlin_language_server", "cssls", "tsserver", "vuels", "jsonls", "yamlls", "dockerls", "emmet_ls", "pylsp" }
+local servers = { "intelephense", "graphql", "html", "kotlin_language_server", "cssls", "vuels", "jsonls", "yamlls", "dockerls", "emmet_ls", "pylsp" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach, capabilities = capabilities }
 end
@@ -68,4 +72,22 @@ nvim_lsp.angularls.setup{
 
 
 nvim_lsp.jdtls.setup{ cmd = { 'jdtls' } }
+
+nvim_lsp.tsserver.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+        typescript = {
+            inlayHints = {
+                includeInlayEnumMemberValueHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayParameterNameHints = "all",
+                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayVariableTypeHints = true,
+            }
+        }
+    }
+})
 EOF
