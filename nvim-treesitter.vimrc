@@ -22,12 +22,14 @@ require'nvim-treesitter.configs'.setup {
       enable = true,
       lookahead = true,
       keymaps = {
-        ["aa"] = "@parameter.outer",
-        ["ia"] = "@parameter.inner",
+        ["aa"] = "@attribute.outer",
+        ["ia"] = "@attribute.inner",
+        ["ap"] = "@parameter.outer",
+        ["ip"] = "@parameter.inner",
         ["af"] = "@function.outer",
         ["if"] = "@function.inner",
         ["ac"] = "@class.outer",
-        ["ic"] = "@class.inner"
+        ["ic"] = "@class.inner",
       }
     },
     swap = {
