@@ -96,6 +96,8 @@ autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 autocmd BufWritePre *.php silent! lua vim.lsp.buf.formatting_sync()
 autocmd BufWritePre *.ts,*.html,*.scss,*.css,*.json silent! Prettier
 
+autocmd BufWritePre *.java silent! lua vim.lsp.buf.format()
+
 autocmd User TelescopePreviewerLoaded setlocal wrap
 
 au TextYankPost * silent! lua vim.highlight.on_yank {timeout=150}
