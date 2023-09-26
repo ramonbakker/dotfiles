@@ -27,6 +27,7 @@ nnoremap <Leader>lld :lua vim.diagnostic.setloclist()<CR>
 nnoremap <C-p> :Telescope find_files find_command=fdfind,--type,f,--hidden,--exclude,.git<CR>
 nnoremap <Leader><C-p> :Telescope find_files find_command=fdfind,--type,f,--hidden,--exclude,.git,--no-ignore-vcs<CR>
 nnoremap <Leader>c :Telescope find_files cwd=%:p:h find_command=fdfind,--type,f,--hidden,--follow,--exclude,.git,--no-ignore-vcs<CR>
+nnoremap <Leader>C :Telescope find_files cwd=%:p:h find_command=fdfind,--type,f,--hidden,--follow,--exclude,.git,--no-ignore-vcs,-d,1<CR>
 nnoremap <Leader>m :Telescope marks<CR>
 nnoremap <Leader>ac :lua vim.lsp.buf.code_action()<CR>
 nnoremap <Leader>hc :Telescope command_history<CR>
