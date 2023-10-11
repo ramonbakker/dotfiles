@@ -1,4 +1,3 @@
-lua << EOF
 local dap = require('dap')
 
 local dap, dapui = require("dap"), require("dapui")
@@ -29,4 +28,3 @@ dap.configurations.php = {
     }
   }
 }
-EOF

@@ -1,4 +1,3 @@
-lua << EOF
 local nvim_lsp = require('lspconfig')
 local configs = require('lspconfig/configs')
 local on_attach = function(client, bufnr)
@@ -90,4 +89,3 @@ nvim_lsp.tsserver.setup({
         }
     }
 })
-EOF
