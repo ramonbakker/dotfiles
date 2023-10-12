@@ -8,7 +8,7 @@ yabai -m rule --add app="^Spotify" space=0 manage=on
 yabai -m rule --add app="^Microsoft Outlook" space=11 manage=on
 yabai -m rule --add app="^Microsoft To Do" space=12 manage=on
 yabai -m rule --add app="^KeePassXC" space=13 manage=on
-yabai -m rule --add app="^Bitwarden" space=13 manage=on
+yabai -m rule --add app="^Keeper Password Manager" space=13 manage=on
 
 yabai -m rule --add app="^Alacritty" space=2 manage=on
 yabai -m rule --add app="^kitty" space=2 manage=on
