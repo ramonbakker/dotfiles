@@ -15,7 +15,7 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.signcolumn = 'yes'
 vim.opt.updatetime = 100
-vim.opt.sessionoptions = { blank, buffers, curdir, folds, help, tabpages, winsize, resize }
+vim.opt.sessionoptions = { 'blank', 'buffers', 'curdir', 'folds', 'help', 'tabpages', 'winsize', 'resize' }
 vim.opt.grepprg = 'rg --vimgrep'
 
 vim.keymap.set('n', '<Space>', '<Nop>')
