@@ -38,7 +38,8 @@ require('lazy').setup({
         'tobyS/pdv',
         dependencies = {
             'tobyS/vmustache'
-        }
+        },
+        ft = 'php'
     },
     'noahfrederick/vim-composer',
 
@@ -52,13 +53,13 @@ require('lazy').setup({
     'jparise/vim-graphql',
 
     -- Kotlin
-    'udalov/kotlin-vim',
+    { 'udalov/kotlin-vim', ft = 'kotlin' },
 
     -- JSON
-    'mogelbrod/vim-jsonpath',
+    { 'mogelbrod/vim-jsonpath', ft = 'json' },
 
     -- LaTeX
-    'lervag/vimtex',
+    { 'lervag/vimtex', ft = 'tex' },
 
     -- Utilities
     'mattn/emmet-vim',
@@ -129,7 +130,7 @@ require('lazy').setup({
 
     -- Snippets
     'SirVer/ultisnips',
-    'HerringtonDarkholme/yats.vim',
+    { 'HerringtonDarkholme/yats.vim', ft = 'typescript' },
 
     -- Code style helpers
     'stephpy/vim-php-cs-fixer',
