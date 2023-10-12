@@ -27,18 +27,18 @@ end
 
 -- Use a loop to conveniently both setup defined servers 
 -- and map buffer local keybindings when the language server attaches
-local servers = { "intelephense", "graphql", "html", "kotlin_language_server", "cssls", "vuels", "jsonls", "yamlls", "dockerls", "emmet_ls", "pylsp" }
+local servers = { 'intelephense', 'graphql', 'html', 'kotlin_language_server', 'cssls', 'vuels', 'jsonls', 'yamlls', 'dockerls', 'emmet_ls', 'pylsp', 'lua_ls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach, capabilities = capabilities }
 end
 
-local project_library_path = os.getenv( "HOME" ) .. "/.config/yarn/global/node_modules"
-local cmd = { os.getenv( "HOME" ) .. "/.yarn/bin/ngserver", "--stdio", "--tsProbeLocations", project_library_path, "--ngProbeLocations", project_library_path }
+local project_library_path = os.getenv( 'HOME' ) .. '/.config/yarn/global/node_modules'
+local cmd = { os.getenv( 'HOME' ) .. '/.yarn/bin/ngserver', '--stdio', '--tsProbeLocations', project_library_path, '--ngProbeLocations', project_library_path }
 
 nvim_lsp.angularls.setup{
     cmd = cmd,
     capabilities = capabilities,
-    root_dir = nvim_lsp.util.root_pattern("angular.json", "nx.json"),
+    root_dir = nvim_lsp.util.root_pattern('angular.json', 'nx.json'),
     on_new_config = function(new_config,new_root_dir)
         new_config.cmd = cmd
     end,
@@ -53,7 +53,7 @@ nvim_lsp.tsserver.setup({
                 includeInlayEnumMemberValueHints = true,
                 includeInlayFunctionLikeReturnTypeHints = true,
                 includeInlayFunctionParameterTypeHints = true,
-                includeInlayParameterNameHints = "all",
+                includeInlayParameterNameHints = 'all',
                 includeInlayParameterNameHintsWhenArgumentMatchesName = true,
                 includeInlayPropertyDeclarationTypeHints = true,
                 includeInlayVariableTypeHints = true,

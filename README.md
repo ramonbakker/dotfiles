@@ -25,6 +25,8 @@ $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTO
 $ curl https://raw.githubusercontent.com/eruizc-dev/jdtls-launcher/master/install.sh | bash
 $ pip3 install python-lsp-server
 ```
+
+Install the language server for Lua by following the instructions on https://luals.github.io/#neovim-install.
 6. Copy (or create a symbolic link) configuration files for Konsole (make sure to edit Konsole settings afterwards):
 ```zsh
 $ cp konsole/Ramon.profile konsole/GreenOnBlack.colorscheme ~/.local/share/konsole/
