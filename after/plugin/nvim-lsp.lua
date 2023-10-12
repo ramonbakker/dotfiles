@@ -20,7 +20,7 @@ local on_attach = function(client, bufnr)
     ]], false)
   end
 
-  if client.server_capabilities.inlayHintProvider then
+  if client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint ~= nil then
     vim.lsp.inlay_hint(bufnr, true)
   end
 end
@@ -29,7 +29,7 @@ end
 -- and map buffer local keybindings when the language server attaches
 local servers = { 'intelephense', 'graphql', 'html', 'kotlin_language_server', 'cssls', 'vuels', 'jsonls', 'yamlls', 'dockerls', 'emmet_ls', 'pylsp', 'lua_ls' }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach, capabilities = capabilities }
+  nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
 local project_library_path = os.getenv( 'HOME' ) .. '/.config/yarn/global/node_modules'
@@ -37,16 +37,14 @@ local cmd = { os.getenv( 'HOME' ) .. '/.yarn/bin/ngserver', '--stdio', '--tsProb
 
 nvim_lsp.angularls.setup{
     cmd = cmd,
-    capabilities = capabilities,
     root_dir = nvim_lsp.util.root_pattern('angular.json', 'nx.json'),
-    on_new_config = function(new_config,new_root_dir)
+    on_new_config = function(new_config, new_root_dir)
         new_config.cmd = cmd
     end,
 }
 
 nvim_lsp.tsserver.setup({
     on_attach = on_attach,
-    capabilities = capabilities,
     settings = {
         typescript = {
             inlayHints = {
