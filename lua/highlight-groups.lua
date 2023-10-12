@@ -1,7 +1,3 @@
-vim.api.nvim_set_hl(0, 'LineNr', {
-    ctermfg = 'white',
-    fg = 'white'
-})
 vim.api.nvim_set_hl(0, 'Normal', {
     ctermbg = 'None',
     bg = 'None'
