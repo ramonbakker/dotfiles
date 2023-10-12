@@ -29,6 +29,7 @@ vim.g.jsdoc_templates_path = os.getenv('HOME') .. '/.config/nvim/jsdoc_templates
 vim.g.jsdoc_formatter = 'tsdoc'
 vim.g.indent_guides_enable_on_vim_startup = 0
 vim.g.indent_guides_guide_size = 1
+vim.g.matchup_matchparen_deferred = 1
 
 vim.g.UltiSnipsExpandTrigger = '<tab>'
 vim.g.UltiSnipsJumpForwardTrigger = '<C-n>'
