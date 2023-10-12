@@ -67,6 +67,7 @@ require('lazy').setup({
     'mbbill/undotree',
     'windwp/nvim-autopairs',
     { 'folke/todo-comments.nvim', depedencies = { 'nvim-lua/plenary.nvim' } },
+    'andymass/vim-matchup',
 
     -- LSP
     'neovim/nvim-lspconfig',
