@@ -39,6 +39,9 @@ require'nvim-treesitter.configs'.setup {
       swap_previous = {
         ["<Leader>sA"] = "@parameter.inner",
       }
-    }
+    },
+    matchup = {
+      enable = true,
+    },
   }
 }
