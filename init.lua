@@ -66,6 +66,7 @@ require('lazy').setup({
     'tpope/vim-commentary',
     'mbbill/undotree',
     'windwp/nvim-autopairs',
+    { 'folke/todo-comments.nvim', depedencies = { 'nvim-lua/plenary.nvim' } },
 
     -- LSP
     'neovim/nvim-lspconfig',
