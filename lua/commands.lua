@@ -21,5 +21,5 @@ vim.api.nvim_create_autocmd('User', {
 
 vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
-    command = 'silent! lua vim.highlight.on_yank { timeout = 150 }',
+    command = 'silent! lua vim.highlight.on_yank { timeout = 100 }',
 })
