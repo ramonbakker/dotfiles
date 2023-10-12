@@ -25,7 +25,7 @@ vim.keymap.set('n', '<Leader>lq', '<Cmd>Telescope quickfix<CR>')
 vim.keymap.set('n', '<Leader>gb', '<Cmd>Telescope git_branches<CR>')
 vim.keymap.set('n', '<Leader>gc', '<Cmd>Telescope git_commits<CR>')
 vim.keymap.set('n', '<Leader>h', '<Cmd>Telescope oldfiles<CR>')
-vim.keymap.set('n', '<Leader>t', '<Cmd>Telescope lsp_workspace_symbols query=')
+vim.keymap.set('n', '<Leader>t', ':Telescope lsp_workspace_symbols query=')
 vim.keymap.set('n', '<Leader>/', '<Cmd>Telescope current_buffer_fuzzy_find<CR>')
 
 vim.keymap.set('n', '<Leader>ih', '<Cmd>lua vim.lsp.inlay_hint(0)<CR>')
