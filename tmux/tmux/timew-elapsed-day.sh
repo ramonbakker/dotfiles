@@ -1,9 +1,9 @@
 #!/bin/bash
 # Script for Timewarrior that outputs the logged time for today and the active entry.
 # The output can be used for the tmux status line.
-TIMEW_BIN="/usr/local/bin/timew"
-JQ_BIN="/usr/local/bin/jq"
-DATEDIFF_BIN="/usr/local/bin/datediff"
+TIMEW_BIN="timew"
+JQ_BIN="jq"
+DATEDIFF_BIN="datediff"
 
 TIMEW_EXPORT=`$TIMEW_BIN export :day`
 TIMEW_DAY_TOTAL=0
