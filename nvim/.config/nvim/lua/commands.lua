@@ -1,5 +1,4 @@
 -- Configuration for stephpy/vim-php-cs-fixer
--- Install php-cs-fixer with 'composer global require friendsofphp/php-cs-fixer'
 vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = '*.php',
     command = 'silent! call PhpCsFixerFixFile()',
