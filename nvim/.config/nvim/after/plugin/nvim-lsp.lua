@@ -27,7 +27,7 @@ end
 
 -- Use a loop to conveniently both setup defined servers 
 -- and map buffer local keybindings when the language server attaches
-local servers = { 'intelephense', 'graphql', 'html', 'kotlin_language_server', 'cssls', 'vuels', 'jsonls', 'yamlls', 'dockerls', 'emmet_ls', 'pylsp', 'lua_ls' }
+local servers = { 'intelephense', 'graphql', 'kotlin_language_server', 'cssls', 'vuels', 'jsonls', 'yamlls', 'dockerls', 'emmet_ls', 'pylsp', 'lua_ls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
@@ -41,6 +41,10 @@ nvim_lsp.angularls.setup{
     on_new_config = function(new_config, new_root_dir)
         new_config.cmd = cmd
     end,
+}
+
+nvim_lsp.html.setup{
+    filetypes = { 'html', 'twig' },
 }
 
 nvim_lsp.tsserver.setup({
