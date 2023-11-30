@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     command = 'silent! lua vim.lsp.buf.formatting_sync()',
 })
 vim.api.nvim_create_autocmd('BufWritePre', {
-    pattern = { '*.ts', '*.html', '*.scss', '*.css', '*.json' },
+    pattern = { '*.ts', '*.html', '*.scss', '*.css', '*.json', '*.vue' },
     command = 'silent! Prettier',
 })
 

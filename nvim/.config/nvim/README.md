@@ -51,6 +51,6 @@ $ cp tmux/timew-elapsed-day.sh ~/tmux/
 15. Execute in Neovim:
 ```
 :PlugInstall
-:TSInstall php typescript jsdoc html css graphql yaml json bash regex http lua twig
+:TSInstall php typescript jsdoc html css graphql yaml json bash regex http lua twig vue
 ```
 16. Enjoy!
