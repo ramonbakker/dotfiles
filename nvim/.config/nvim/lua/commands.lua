@@ -1,7 +1,6 @@
--- Configuration for stephpy/vim-php-cs-fixer
 vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = '*.php',
-    command = 'silent! call PhpCsFixerFixFile()',
+    command = 'silent! !php-cs-fixer fix %',
 })
 
 vim.api.nvim_create_autocmd('BufWritePre', {
