@@ -35,7 +35,7 @@ Install the language server for Lua by following the instructions on https://lua
 11. Put configuration in ~/.zshrc:
 ```
 PATH=$PATH:~/.local/bin
-plugins=(git laravel ng supervisor yarn composer zsh-autosuggestions vi-mode fzf zsh-syntax-highlighting)
+plugins=(git laravel ng supervisor yarn composer zsh-autosuggestions vi-mode fzf zsh-syntax-highlighting zsh-interactive-cd)
 export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git"
 ```
 12. (Recommended) Use fd-find instead of find for fzf, which gives a better performance: see https://github.com/junegunn/fzf#settings. You might need to change fd to fdfind in the configuration.
