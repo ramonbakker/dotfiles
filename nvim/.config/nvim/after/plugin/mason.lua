@@ -1,3 +1,8 @@
+require('mason').setup()
+require('mason-lspconfig').setup {
+    automatic_installation = true,
+}
+
 local nvim_lsp = require('lspconfig')
 local configs = require('lspconfig/configs')
 local on_attach = function(client, bufnr)
@@ -32,15 +37,8 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
-local project_library_path = os.getenv( 'HOME' ) .. '/.config/yarn/global/node_modules'
-local cmd = { os.getenv( 'HOME' ) .. '/.yarn/bin/ngserver', '--stdio', '--tsProbeLocations', project_library_path, '--ngProbeLocations', project_library_path }
-
 nvim_lsp.angularls.setup{
-    cmd = cmd,
     root_dir = nvim_lsp.util.root_pattern('angular.json', 'nx.json'),
-    on_new_config = function(new_config, new_root_dir)
-        new_config.cmd = cmd
-    end,
 }
 
 nvim_lsp.html.setup{
