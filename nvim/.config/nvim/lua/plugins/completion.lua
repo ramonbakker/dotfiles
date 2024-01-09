@@ -9,7 +9,7 @@ return {
             'hrsh7th/cmp-nvim-lsp-signature-help',
             'hrsh7th/cmp-nvim-lua',
             'rcarriga/cmp-dap',
-            'quangnguyen30192/cmp-nvim-ultisnips',
+            'saadparwaiz1/cmp_luasnip',
             'onsails/lspkind-nvim'
         }
     },

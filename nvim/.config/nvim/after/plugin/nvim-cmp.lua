@@ -4,8 +4,7 @@ local lspkind = require('lspkind')
 cmp.setup {
   snippet = {
     expand = function(args)
-      -- You must install `vim-vsnip` if you use the following as-is.
-      vim.fn['UltiSnips#Anon'](args.body)
+        require('luasnip').lsp_expand(args.body)
     end
   },
 
@@ -25,7 +24,7 @@ cmp.setup {
 
   -- You should specify your *installed* sources.
   sources = cmp.config.sources({
-    { name = 'ultisnips' },
+    { name = 'luasnip' },
     { name = 'nvim_lsp' },
     { name = 'dap' },
     { name = 'path' },
@@ -47,7 +46,7 @@ cmp.setup {
     format = lspkind.cmp_format({
       mode = "symbol_text",
       menu = {
-        ultisnips = '[Ultisnips]',
+        luasnip = '[LuaSnip]',
         nvim_lsp = '[LSP]',
         dap = '[DAP]',
         path = '[Path]',

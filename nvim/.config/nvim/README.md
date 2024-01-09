@@ -28,18 +28,16 @@ $ pip3 install python-lsp-server
 
 Install the language server for Lua by following the instructions on https://luals.github.io/#neovim-install.
 6. Install php-cs-fixer with 'composer global require friendsofphp/php-cs-fixer'.
-7. Copy UltiSnips/php.snippets.example to UltiSnips/php.snippets and edit according to your preferences.
-8. Copy UltiSnips/typescript.snippets.example to UltiSnips/typescript.snippets and edit according to your preferences.
-9. Copy jsdoc_templates/default.js.example to jsdoc_templates/default.js and edit according to your preferences.
-10. Copy pdv_templates/function.tpl.example to pdv_templates/function.tpl and edit according to your preferences.
-11. Put configuration in ~/.zshrc:
+7. Copy jsdoc_templates/default.js.example to jsdoc_templates/default.js and edit according to your preferences.
+8. Copy pdv_templates/function.tpl.example to pdv_templates/function.tpl and edit according to your preferences.
+9. Put configuration in ~/.zshrc:
 ```
 PATH=$PATH:~/.local/bin
 plugins=(git laravel ng supervisor yarn composer zsh-autosuggestions vi-mode fzf zsh-syntax-highlighting zsh-interactive-cd)
 export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git"
 ```
-12. (Recommended) Use fd-find instead of find for fzf, which gives a better performance: see https://github.com/junegunn/fzf#settings. You might need to change fd to fdfind in the configuration.
-13. Copy (or create symbolic links) files for tmux, yabai and skhd:
+10. (Recommended) Use fd-find instead of find for fzf, which gives a better performance: see https://github.com/junegunn/fzf#settings. You might need to change fd to fdfind in the configuration.
+11. Copy (or create symbolic links) files for tmux, yabai and skhd:
 ```zsh
 $ cp tmux/.tmux.conf ~/.tmux.conf
 $ cp yabai/.yabairc ~/.yabairc
@@ -47,10 +45,9 @@ $ cp skhd/.skhdrc ~/.skhdrc
 $ mkdir ~/tmux
 $ cp tmux/timew-elapsed-day.sh ~/tmux/
 ```
-14. Open tmux in the terminal and install plugins (<kbd>Ctrl</kbd> + <kbd>b</kbd>, <kbd>I</kbd>).
-15. Execute in Neovim:
+12. Open tmux in the terminal and install plugins (<kbd>Ctrl</kbd> + <kbd>b</kbd>, <kbd>I</kbd>).
+13. Execute in Neovim:
 ```
-:PlugInstall
 :TSInstall php typescript jsdoc html css graphql yaml json bash regex http lua twig vue
 ```
-16. Enjoy!
+14. Enjoy!
