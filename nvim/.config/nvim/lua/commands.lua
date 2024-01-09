@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
 vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = { '*.php', '*.java' },
-    command = 'silent! lua vim.lsp.buf.formatting_sync()',
+    command = 'silent! lua vim.lsp.buf.format({ async = false })',
 })
 vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = { '*.ts', '*.html', '*.scss', '*.css', '*.json', '*.vue' },
