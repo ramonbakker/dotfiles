@@ -46,8 +46,5 @@ $ mkdir ~/tmux
 $ cp tmux/timew-elapsed-day.sh ~/tmux/
 ```
 12. Open tmux in the terminal and install plugins (<kbd>Ctrl</kbd> + <kbd>b</kbd>, <kbd>I</kbd>).
-13. Execute in Neovim:
-```
-:TSInstall php typescript jsdoc html css graphql yaml json bash regex http lua twig vue java
-```
+13. Install the Tree-sitter CLI (see https://github.com/tree-sitter/tree-sitter/blob/master/cli/README.md).
 14. Enjoy!
