@@ -39,7 +39,7 @@ local config = {
         '-data', workspace_dir,
     },
     init_options = {
-      bundles = bundles;
+      bundles = bundles,
       extendedClientCapabilities = extendedClientCapabilities
     },
     filetypes = {
