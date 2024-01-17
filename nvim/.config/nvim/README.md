@@ -27,6 +27,7 @@ $ pip3 install python-lsp-server
 ```
 
 Install the language server for Lua by following the instructions on https://luals.github.io/#neovim-install.
+For Java: install jdtls, jdk-openjdk and openjdk-src.
 6. Install php-cs-fixer with 'composer global require friendsofphp/php-cs-fixer'.
 7. Copy jsdoc_templates/default.js.example to jsdoc_templates/default.js and edit according to your preferences.
 8. Copy pdv_templates/function.tpl.example to pdv_templates/function.tpl and edit according to your preferences.
