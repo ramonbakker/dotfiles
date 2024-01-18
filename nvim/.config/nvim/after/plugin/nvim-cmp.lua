@@ -24,8 +24,8 @@ cmp.setup {
 
   -- You should specify your *installed* sources.
   sources = cmp.config.sources({
-    { name = 'luasnip' },
     { name = 'nvim_lsp' },
+    { name = 'luasnip' },
     { name = 'dap' },
     { name = 'path' },
     { name = 'buffer' },
@@ -46,8 +46,8 @@ cmp.setup {
     format = lspkind.cmp_format({
       mode = "symbol_text",
       menu = {
-        luasnip = '[LuaSnip]',
         nvim_lsp = '[LSP]',
+        luasnip = '[LuaSnip]',
         dap = '[DAP]',
         path = '[Path]',
         treesitter = '[Treesitter]',
