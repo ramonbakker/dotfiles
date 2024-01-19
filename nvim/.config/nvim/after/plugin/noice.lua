@@ -19,4 +19,7 @@ require("noice").setup({
     notify = {
         enabled = false
     },
+    popupmenu = {
+        enabled = false
+    },
 })
