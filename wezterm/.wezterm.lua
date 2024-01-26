@@ -2,6 +2,7 @@ local wezterm = require 'wezterm'
 
 local config = {}
 
+config.front_end = 'WebGpu'
 config.enable_tab_bar = false
 config.font = wezterm.font('Hack')
 config.font_size = 14
