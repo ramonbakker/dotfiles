@@ -25,12 +25,6 @@ return {
             'DBUIToggle',
             'DBUIAddConnection',
             'DBUIFindBuffer',
-        },
-        init = function()
-            vim.api.nvim_create_autocmd('User', {
-                pattern = 'DBUIOpened',
-                command = 'setlocal number relativenumber'
-            })
-        end
+        }
     }
 }
