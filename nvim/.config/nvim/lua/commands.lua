@@ -42,5 +42,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '[d', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
         vim.keymap.set('n', ']d', '<Cmd>lua vim.diagnostic.goto_next()<CR>', opts)
         vim.keymap.set('n', '<Leader>q', '<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+        vim.keymap.set('n', '<Leader>db', '<Cmd>DBUIToggle<CR>', opts)
     end
 })
