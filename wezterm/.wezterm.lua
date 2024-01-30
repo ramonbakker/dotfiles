@@ -7,6 +7,7 @@ config.enable_tab_bar = false
 config.font = wezterm.font_with_fallback {
     'Hack',
     'Hack Nerd Font',
+    'Symbols Nerd Font',
     'Noto Color Emoji'
 }
 config.font_size = 14
