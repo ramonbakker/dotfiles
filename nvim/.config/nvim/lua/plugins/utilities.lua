@@ -1,5 +1,4 @@
 return {
-    'mattn/emmet-vim',
     'kylechui/nvim-surround',
     'tpope/vim-commentary',
     'mbbill/undotree',
