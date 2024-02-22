@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<Leader>f', '<Cmd>Fern . -reveal=% -drawer -toggle -width=40<CR>')
+vim.keymap.set('n', '<Leader>f', '<Cmd>Oil<CR>')
 
 vim.keymap.set('n', '<F3>', '<Cmd>call pdv#DocumentWithSnip()<CR>')
 vim.keymap.set('n', '<Leader>,', '<Cmd>cprevious<CR>')

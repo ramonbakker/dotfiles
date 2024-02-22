@@ -35,8 +35,6 @@ vim.g.UltiSnipsExpandTrigger = '<tab>'
 vim.g.UltiSnipsJumpForwardTrigger = '<C-n>'
 vim.g.UltiSnipsJumpBackwardTrigger = '<C-p>'
 
-vim.g['fern#renderer'] = 'nerdfont'
-
 vim.g['test#strategy'] = 'neovim'
 vim.g['test#javascript#runner'] = 'jest'
 

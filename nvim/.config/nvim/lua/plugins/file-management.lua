@@ -11,14 +11,9 @@ return {
         }
     },
     {
-        'lambdalisue/fern.vim',
-        branch = 'main',
+        'stevearc/oil.nvim',
         dependencies = {
-            'lambdalisue/nerdfont.vim',
-            'lambdalisue/glyph-palette.vim',
-            'lambdalisue/fern-renderer-nerdfont.vim',
-            'lambdalisue/fern-mapping-quickfix.vim',
-            'lambdalisue/fern-git-status.vim'
+            'nvim-tree/nvim-web-devicons'
         }
     },
 }
