@@ -32,7 +32,7 @@ end
 
 -- Use a loop to conveniently both setup defined servers 
 -- and map buffer local keybindings when the language server attaches
-local servers = { 'intelephense', 'graphql', 'kotlin_language_server', 'cssls', 'vuels', 'jsonls', 'yamlls', 'dockerls', 'emmet_ls', 'pylsp', 'lua_ls', 'svelte' }
+local servers = { 'phpactor', 'graphql', 'kotlin_language_server', 'cssls', 'vuels', 'jsonls', 'yamlls', 'dockerls', 'emmet_ls', 'pylsp', 'lua_ls', 'svelte', 'docker_compose_language_service' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
