@@ -4,7 +4,7 @@ Configuration files to use with Neovim.
 ## Getting started
 1. Install [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim).
 2. (Recommended) Install [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#quick-installation).
-3. (Recommended) Install terminal packages with a package manager:
+3. (Recommended) Install terminal packages with a package manager like apt or brew:
 ```zsh
 $ sudo apt install zsh tmux timewarrior taskwarrior jq dateutils
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -17,8 +17,6 @@ $ sudo apt install ripgrep bat fd-find fzf fzy trash-cli
 $ pip3 install ueberzug
 $ mkdir -p ~/.local/bin
 $ ln -s /usr/bin/batcat ~/.local/bin/bat
-$ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 $ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
