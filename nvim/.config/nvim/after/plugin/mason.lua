@@ -2,6 +2,30 @@ require('mason').setup()
 require('mason-lspconfig').setup {
     automatic_installation = true,
 }
+require('mason-nvim-dap').setup({
+    ensure_installed = {
+        'firefox',
+        'php',
+    },
+    automatic_installation = true,
+    handlers = {
+        function(config)
+            require('mason-nvim-dap').default_setup(config)
+        end,
+        php = function(config)
+            config.configurations = {
+                {
+                    type = 'php',
+                    request = 'launch',
+                    name = 'Listen for Xdebug',
+                    port = 9003,
+                }
+            }
+
+            require('mason-nvim-dap').default_setup(config)
+        end,
+    }
+})
 
 local nvim_lsp = require('lspconfig')
 local configs = require('lspconfig/configs')
