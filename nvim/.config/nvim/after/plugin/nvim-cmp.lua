@@ -31,7 +31,6 @@ cmp.setup {
     { name = 'vim-dadbod-completion' },
     { name = 'buffer' },
     { name = 'calc' },
-    { name = 'nvim_lsp_signature_help' },
   }),
 
   enabled = function ()
