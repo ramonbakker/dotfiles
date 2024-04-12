@@ -12,6 +12,7 @@ yabai -m rule --add app="^Keeper Password Manager" space=13 manage=on
 
 yabai -m rule --add app="^Alacritty" space=2 manage=on
 yabai -m rule --add app="^kitty" space=2 manage=on
+yabai -m rule --add app="^WezTerm" space=2 manage=on
 
 yabai -m rule --add app="^System Preferences" manage=off
 yabai -m rule --add app="^PhpStorm" title!="^repositories" manage=off
