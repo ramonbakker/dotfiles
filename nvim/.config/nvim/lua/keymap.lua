@@ -63,3 +63,6 @@ vim.keymap.set('n', '<Leader>dt', "<Cmd>lua require'dap'.terminate()<CR>", { sil
 vim.keymap.set('n', '<Leader>do', "<Cmd>lua require'dapui'.open()<CR>", { silent = true })
 vim.keymap.set('n', '<Leader>dc', "<Cmd>lua require'dapui'.close()<CR>", { silent = true })
 vim.keymap.set('n', '<Leader>dC', "<Cmd>lua require'dapui'.close(); require'dap'.terminate()<CR>", { silent = true })
+
+-- vim-dadbod
+vim.keymap.set('n', '<Leader>db', '<Cmd>DBUIToggle<CR>')
