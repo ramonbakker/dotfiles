@@ -51,6 +51,7 @@ cmp.setup {
         dap = '[DAP]',
         path = '[Path]',
         treesitter = '[Treesitter]',
+        ["vim-dadbod-completion"] = '[DB]',
         buffer = '[Buffer]',
         calc = '[Calc]',
       }
