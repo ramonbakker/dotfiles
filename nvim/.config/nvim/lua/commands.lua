@@ -29,7 +29,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         vim.keymap.set('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
         vim.keymap.set('n', 'gd', '<Cmd>Telescope lsp_definitions<CR>', opts)
-        vim.keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
         vim.keymap.set('n', '<Leader>i', '<Cmd>Telescope lsp_implementations<CR>', opts)
         vim.keymap.set('n', '<Leader>k', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
         vim.keymap.set('i', '<C-s>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
