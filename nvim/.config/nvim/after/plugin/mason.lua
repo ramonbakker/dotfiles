@@ -49,9 +49,16 @@ local on_attach = function(client, bufnr)
     ]], false)
   end
 
-  if client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint ~= nil then
-    vim.lsp.inlay_hint(bufnr, true)
-  end
+    vim.lsp.inlay_hint.enable()
+
+    vim.api.nvim_set_hl(0, 'LspInlayHint', {
+        ctermfg = 'grey',
+        fg = 'grey',
+        cterm = {
+            bold = true,
+        },
+        bold = true,
+    })
 end
 
 -- Use a loop to conveniently both setup defined servers 

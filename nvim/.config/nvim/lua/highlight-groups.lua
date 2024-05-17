@@ -5,16 +5,6 @@ vim.api.nvim_set_hl(0, 'IndentGuidesEven', {
     ctermbg = 'black',
 })
 
-vim.api.nvim_set_hl(0, 'LspInlayHint', {
-    ctermfg = 'grey',
-    fg = 'grey',
-    cterm = {
-        italic = true,
-        bold = true
-    },
-    italic = true,
-    bold = true
-})
 vim.api.nvim_set_hl(0, 'IndentGuidesEven', {
     ctermbg = 'black',
 })

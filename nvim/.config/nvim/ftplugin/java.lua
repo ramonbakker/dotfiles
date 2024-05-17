@@ -12,9 +12,7 @@ local on_attach = function(client, bufnr)
   require('jdtls').setup_dap({ hotcodereplace = 'auto' })
   require('jdtls.dap').setup_dap_main_class_configs()
 
-  if vim.lsp.inlay_hint ~= nil then
-    vim.lsp.inlay_hint(bufnr, true)
-  end
+  vim.lsp.inlay_hint.enable()
 end
 
 local bundles = {
