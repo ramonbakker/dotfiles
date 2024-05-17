@@ -1,6 +1,5 @@
 return {
     'kylechui/nvim-surround',
-    'tpope/vim-commentary',
     'mbbill/undotree',
     'windwp/nvim-autopairs',
     {
