@@ -28,7 +28,7 @@ vim.keymap.set('n', '<Leader>h', '<Cmd>Telescope oldfiles<CR>')
 vim.keymap.set('n', '<Leader>t', ':Telescope lsp_workspace_symbols query=')
 vim.keymap.set('n', '<Leader>/', '<Cmd>Telescope current_buffer_fuzzy_find<CR>')
 
-vim.keymap.set('n', '<Leader>ih', '<Cmd>lua vim.lsp.inlay_hint(0)<CR>')
+vim.keymap.set('n', '<Leader>ih', '<Cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>')
 
 -- Sort selected lines by length
 vim.keymap.set('v', '<Leader>sl', "!awk '{ print length, $0 }' | sort -n | cut -d ' ' -f 2-<CR>")
