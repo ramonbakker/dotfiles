@@ -3,7 +3,7 @@ This repository contains dotfiles for several programs. Use stow to propagate th
 
 ## macOS
 ```zsh
-brew install tmux timewarrior dateutils neovim koekeishiya/formulae/yabai koekeishiya/formulae/skhd stow htop jq skhd fzf fd trash-cli ripgrep bat
+brew install tmux timewarrior dateutils neovim koekeishiya/formulae/yabai koekeishiya/formulae/skhd stow htop jq skhd fzf fd trash-cli ripgrep bat tree-sitter
 brew install --cask font-hack spotify karabiner-elements keepassxc
 mkdir ~/.config
 stow karabiner nvim p10k skhd tmux wezterm yabai
@@ -36,8 +36,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 curl https://get.volta.sh | bash
 volta install node yarn
 
-npm install tree-sitter-cli
-
 cat <<'EOF' >> ~/.zshrc
 alias vim="/usr/local/bin/nvim"
 
@@ -54,13 +52,13 @@ EOF
 ```
 
 ## Browser extensions
-[KeePassXC-Browser](https://github.com/keepassxreboot/keepassxc-browser?tab=readme-ov-file#download-and-use)
-[Ghostery](https://www.ghostery.com/ghostery-ad-blocker)
-[uBlock Origin](https://github.com/gorhill/uBlock?tab=readme-ov-file#installation)
-[Surfingkeys](https://github.com/brookhong/Surfingkeys?tab=readme-ov-file#installation)
+[KeePassXC-Browser](https://github.com/keepassxreboot/keepassxc-browser?tab=readme-ov-file#download-and-use)  
+[Ghostery](https://www.ghostery.com/ghostery-ad-blocker)  
+[uBlock Origin](https://github.com/gorhill/uBlock?tab=readme-ov-file#installation)  
+[Surfingkeys](https://github.com/brookhong/Surfingkeys?tab=readme-ov-file#installation)  
 
 ### Firefox specific
-[Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
+[Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)  
 
 #### PHP
-[Xdebug Helper for Firefox](https://addons.mozilla.org/nl/firefox/addon/xdebug-helper-for-firefox/)
+[Xdebug Helper for Firefox](https://addons.mozilla.org/nl/firefox/addon/xdebug-helper-for-firefox/)  
