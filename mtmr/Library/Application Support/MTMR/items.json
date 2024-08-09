@@ -15,9 +15,11 @@
     },
 
     {
-        "type": "timeButton",
-        "formatTemplate": "HH:mm:ss",
+        "type": "shellScriptTitledButton",
         "refreshInterval": 3,
+        "source": {
+            "inline": "date '+%H:%M:%S'"
+        },
         "align": "right",
         "bordered": false
     },
