@@ -60,13 +60,18 @@ EOF
 ```
 
 ## Browser extensions
-[KeePassXC-Browser](https://github.com/keepassxreboot/keepassxc-browser?tab=readme-ov-file#download-and-use)  
-[Ghostery](https://www.ghostery.com/ghostery-ad-blocker)  
-[uBlock Origin](https://github.com/gorhill/uBlock?tab=readme-ov-file#installation)  
-[Surfingkeys](https://github.com/brookhong/Surfingkeys?tab=readme-ov-file#installation)  
+- [KeePassXC-Browser](https://github.com/keepassxreboot/keepassxc-browser?tab=readme-ov-file#download-and-use)  
+- [Ghostery](https://www.ghostery.com/ghostery-ad-blocker)  
+- [uBlock Origin](https://github.com/gorhill/uBlock?tab=readme-ov-file#installation)  
+- [Surfingkeys](https://github.com/brookhong/Surfingkeys?tab=readme-ov-file#installation)  
+Custom settings:
+```
+settings.tabsThreshold = 0;
+```
+
 
 ### Firefox specific
-[Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)  
+- [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)  
 
 #### PHP
-[Xdebug Helper for Firefox](https://addons.mozilla.org/nl/firefox/addon/xdebug-helper-for-firefox/)  
+- [Xdebug Helper for Firefox](https://addons.mozilla.org/nl/firefox/addon/xdebug-helper-for-firefox/)  
