@@ -17,9 +17,6 @@ $ sudo apt install ripgrep bat fd-find fzf fzy trash-cli
 $ pip3 install ueberzug
 $ mkdir -p ~/.local/bin
 $ ln -s /usr/bin/batcat ~/.local/bin/bat
-$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-$ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 $ curl https://raw.githubusercontent.com/eruizc-dev/jdtls-launcher/master/install.sh | bash
 $ pip3 install python-lsp-server
 ```
