@@ -5,7 +5,7 @@ This repository contains dotfiles for several programs. Use stow to propagate th
 ```zsh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install tmux timewarrior dateutils neovim koekeishiya/formulae/yabai koekeishiya/formulae/skhd stow htop jq skhd fzf fd trash-cli ripgrep bat tree-sitter
-brew install --cask font-hack spotify karabiner-elements keepassxc
+brew install --cask font-hack spotify karabiner-elements keepassxc wezterm
 mkdir ~/.config
 stow karabiner nvim p10k skhd tmux wezterm yabai
 ```
