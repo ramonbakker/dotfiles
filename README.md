@@ -7,7 +7,7 @@ This repository contains dotfiles for several programs. Use stow to propagate th
 
 echo export HOMEBREW_NO_AUTO_UPDATE=1 >> ~/.zshrc
 
-brew install tmux taskwarrior-tui timewarrior dateutils neovim koekeishiya/formulae/yabai koekeishiya/formulae/skhd stow htop jq skhd fzf fd trash-cli ripgrep bat tree-sitter
+brew install tmux taskwarrior-tui timewarrior dateutils neovim koekeishiya/formulae/yabai koekeishiya/formulae/skhd stow htop jq skhd fzf fd trash-cli ripgrep bat tree-sitter mariadb
 brew install --cask docker font-hack mtmr spotify karabiner-elements keepassxc wezterm
 
 mkdir ~/.config
