@@ -26,7 +26,6 @@
 
     {
         "type": "shellScriptTitledButton",
-        "width": 320,
         "refreshInterval": 3,
         "source": {
             "inline": "PATH=/usr/local/bin:$PATH ~/tmux/timew-elapsed-day.sh"
