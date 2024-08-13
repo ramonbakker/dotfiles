@@ -12,6 +12,8 @@ brew install --cask docker font-hack mtmr spotify karabiner-elements keepassxc w
 
 mkdir ~/.config
 stow karabiner mtmr nvim p10k skhd tmux wezterm yabai
+
+sudo nvram AutoBoot=%00
 ```
 
 Follow installation instructions for yabai: <https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)>. Disable System Integrity Protection: <https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection#how-do-i-disable-system-integrity-protection>.
