@@ -63,6 +63,7 @@ EOF
 ```
 
 ## Browser extensions
+- [Dark Reader](https://darkreader.org/)
 - [KeePassXC-Browser](https://github.com/keepassxreboot/keepassxc-browser?tab=readme-ov-file#download-and-use)  
 - [Ghostery](https://www.ghostery.com/ghostery-ad-blocker)  
 - [uBlock Origin](https://github.com/gorhill/uBlock?tab=readme-ov-file#installation)  
