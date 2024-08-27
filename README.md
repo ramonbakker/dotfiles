@@ -9,7 +9,7 @@ echo export HOMEBREW_NO_AUTO_UPDATE=1 >> ~/.zshrc
 
 brew install tmux taskwarrior-tui timewarrior dateutils neovim koekeishiya/formulae/yabai koekeishiya/formulae/skhd stow htop jq skhd fzf fd trash-cli ripgrep bat tree-sitter mariadb php-cs-fixer
  tree
-brew install --cask docker font-hack mtmr spotify karabiner-elements keepassxc wezterm
+brew install --cask docker font-hack mtmr spotify karabiner-elements keepassxc wezterm libreoffice
 
 mkdir ~/.config
 stow karabiner mtmr nvim p10k skhd tmux wezterm yabai
