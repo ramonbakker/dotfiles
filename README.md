@@ -19,6 +19,7 @@ sudo nvram AutoBoot=%00
 # Optional
 pip3 install visidata
 
+brew install openjdk
 brew install --cask apache-directory-studio
 ```
 
