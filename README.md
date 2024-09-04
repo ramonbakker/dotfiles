@@ -16,7 +16,10 @@ stow karabiner mtmr nvim p10k skhd tmux wezterm yabai
 
 sudo nvram AutoBoot=%00
 
+# Optional
 pip3 install visidata
+
+brew install --cask apache-directory-studio
 ```
 
 Follow installation instructions for yabai: <https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)>. Disable System Integrity Protection: <https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection#how-do-i-disable-system-integrity-protection>.
