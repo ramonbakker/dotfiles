@@ -20,6 +20,9 @@ sudo nvram AutoBoot=%00
 pip3 install visidata
 
 brew install openjdk
+sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.zshrc
+
 brew install --cask apache-directory-studio
 ```
 
