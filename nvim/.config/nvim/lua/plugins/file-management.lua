@@ -10,7 +10,8 @@ return {
                 name = 'kyazdani42_nvim-web-devicons'
             },
             'nvim-telescope/telescope-media-files.nvim',
-            'nvim-telescope/telescope-ui-select.nvim'
+            'nvim-telescope/telescope-ui-select.nvim',
+            'nvim-telescope/telescope-live-grep-args.nvim'
         }
     },
     {
