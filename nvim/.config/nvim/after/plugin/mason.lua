@@ -1,4 +1,9 @@
-require('mason').setup()
+require('mason').setup({
+    registries = {
+        'github:mason-org/mason-registry',
+        'github:crashdummyy/mason-registry',
+      },
+})
 require('mason-lspconfig').setup {
     automatic_installation = true,
 }
@@ -63,7 +68,21 @@ end
 
 -- Use a loop to conveniently both setup defined servers 
 -- and map buffer local keybindings when the language server attaches
-local servers = { 'phpactor', 'graphql', 'kotlin_language_server', 'cssls', 'vuels', 'jsonls', 'yamlls', 'dockerls', 'emmet_ls', 'pylsp', 'lua_ls', 'svelte', 'docker_compose_language_service' }
+local servers = {
+    'intelephense',
+    'graphql',
+    'kotlin_language_server',
+    'cssls',
+    'vuels',
+    'jsonls',
+    'yamlls',
+    'dockerls',
+    'emmet_ls',
+    'pylsp',
+    'lua_ls',
+    'svelte',
+    'docker_compose_language_service'
+}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
@@ -76,7 +95,7 @@ nvim_lsp.html.setup{
     filetypes = { 'html', 'twig' },
 }
 
-nvim_lsp.tsserver.setup({
+nvim_lsp.ts_ls.setup({
     on_attach = on_attach,
     settings = {
         typescript = {
