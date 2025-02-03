@@ -23,9 +23,12 @@ nnoremap <Space> <Nop>
 let g:highlightedyank_highlight_duration = "100"
 
 nmap <Leader>f :NERDTreeToggle<CR>
+nmap <Leader>ac <Action>(ShowIntentionActions)
 nmap <Leader>pc <Action>(CompileProject)
 nmap <Leader>r <Action>(Run)
 nmap <Leader>d <Action>(Debug)
+nmap <Leader>lf <Action>(FileStructurePopup)
+nmap <Leader>ih <Action>(ToggleInlayHintsGloballyAction)
 nmap <Leader>lg <Action>(FindInPath)
 nmap <Leader>tn <Action>(RunClass)
 nmap <C-p> <Action>(GotoFile)
