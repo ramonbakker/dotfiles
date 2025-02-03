@@ -11,6 +11,12 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = { '*.ts', '*.html', '*.scss', '*.css', '*.json', '*.vue', '*.svelte' },
     command = 'silent! Prettier',
 })
+vim.api.nvim_create_autocmd('BufWritePre', {
+    pattern = { '*.cs' },
+    callback = function(args)
+        require('conform').format({ bufnr = args.buf })
+    end
+})
 
 vim.api.nvim_create_autocmd('User', {
     pattern = 'TelescopePreviewerLoaded',

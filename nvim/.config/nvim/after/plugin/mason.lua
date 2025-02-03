@@ -81,7 +81,7 @@ local servers = {
     'pylsp',
     'lua_ls',
     'svelte',
-    'docker_compose_language_service'
+    'docker_compose_language_service',
 }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
@@ -110,4 +110,19 @@ nvim_lsp.ts_ls.setup({
             }
         }
     }
+})
+
+nvim_lsp.csharp_ls.setup({
+    on_attach = function(_, bufnr)
+        vim.keymap.set(
+            'n',
+            'gd',
+            '<Cmd>Telescope csharpls_definition<CR>',
+            { buffer = bufnr, noremap = true }
+        )
+    end,
+    handlers = {
+        ['textDocument/definition'] = require('csharpls_extended').handler,
+        ['textDocument/typeDefinition'] = require('csharpls_extended').handler,
+    },
 })
