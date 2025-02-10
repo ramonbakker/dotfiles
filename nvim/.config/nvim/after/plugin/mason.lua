@@ -2,11 +2,11 @@ require('mason').setup({
     registries = {
         'github:mason-org/mason-registry',
         'github:crashdummyy/mason-registry',
-      },
+    }
 })
-require('mason-lspconfig').setup {
+require('mason-lspconfig').setup({
     automatic_installation = true,
-}
+})
 require('mason-nvim-dap').setup({
     ensure_installed = {
         'firefox',
@@ -83,19 +83,28 @@ local servers = {
     'svelte',
     'docker_compose_language_service',
 }
+local capabilities = require('blink.cmp').get_lsp_capabilities()
+
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
+
+  nvim_lsp[lsp].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+    })
 end
 
-nvim_lsp.angularls.setup{
+nvim_lsp.angularls.setup({
+    capabilities = capabilities,
     root_dir = nvim_lsp.util.root_pattern('angular.json', 'nx.json'),
-}
+})
 
-nvim_lsp.html.setup{
+nvim_lsp.html.setup({
+    capabilities = capabilities,
     filetypes = { 'html', 'twig' },
-}
+})
 
 nvim_lsp.ts_ls.setup({
+    capabilities = capabilities,
     on_attach = on_attach,
     settings = {
         typescript = {
@@ -113,6 +122,7 @@ nvim_lsp.ts_ls.setup({
 })
 
 nvim_lsp.csharp_ls.setup({
+    capabilities = capabilities,
     on_attach = function(_, bufnr)
         vim.keymap.set(
             'n',

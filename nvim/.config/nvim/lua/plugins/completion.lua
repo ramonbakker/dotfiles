@@ -10,6 +10,13 @@ return {
             'rcarriga/cmp-dap',
             'saadparwaiz1/cmp_luasnip',
             'onsails/lspkind-nvim'
-        }
+        },
     },
+    {
+        'saghen/blink.cmp',
+        dependencies = {
+            'rafamadriz/friendly-snippets'
+        },
+        version = '*'
+    }
 }
