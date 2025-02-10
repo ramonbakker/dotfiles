@@ -24,6 +24,7 @@ let g:highlightedyank_highlight_duration = "100"
 
 nmap <Leader>f :NERDTreeToggle<CR>
 nmap <Leader>ac <Action>(ShowIntentionActions)
+nmap <Leader>e <Action>(ShowErrorDescription)
 nmap <Leader>pc <Action>(CompileProject)
 nmap <Leader>r <Action>(Run)
 nmap <Leader>d <Action>(Debug)
