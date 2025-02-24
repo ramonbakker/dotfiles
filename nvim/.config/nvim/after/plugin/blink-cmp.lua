@@ -2,7 +2,7 @@ local blink = require('blink.cmp')
 
 blink.setup({
     keymap = {
-        preset = 'default'
+        preset = 'enter'
     },
     completion = {
         documentation = {
@@ -33,5 +33,8 @@ blink.setup({
                 }
             }
         }
+    },
+    signature = {
+        enabled = true
     }
 })
