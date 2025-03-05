@@ -1,6 +1,6 @@
 vim.api.nvim_exec([[
     function! LightlineFileIconAndPath()
-        return WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:f')
+        return v:lua.require('nvim-web-devicons').get_icon(expand('%:t'), expand('%:e')) . ' ' . expand('%:f')
     endfunction
 
     function! LightlineGitBranch()
@@ -11,6 +11,7 @@ vim.api.nvim_exec([[
         let bufList = tabpagebuflist(a:n)
         let winNr = tabpagewinnr(a:n)
         let bufName = expand('#'.bufList[winNr - 1])
-        return WebDevIconsGetFileTypeSymbol(bufName) . ' ' . lightline#tab#filename(a:n)
+        let bufFiletype = expand('#'.bufList[winNr - 1].':e')
+        return v:lua.require('nvim-web-devicons').get_icon(bufName, bufFiletype) . ' ' . lightline#tab#filename(a:n)
     endfunction
 ]], false)
