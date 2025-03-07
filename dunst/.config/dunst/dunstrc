@@ -1,0 +1,6 @@
+[global]
+    follow = keyboard
+    foreground = "#ffffff"
+    font = "CommitMonoNerdFont 12"
+    width = 500
+    height = (0, 500)
