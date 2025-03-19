@@ -36,5 +36,20 @@ blink.setup({
     },
     signature = {
         enabled = true
-    }
+    },
+    sources = {
+        per_filetype = {
+            sql = {
+                'snippets',
+                'dadbod',
+                'buffer'
+            }
+        },
+        providers = {
+            dadbod = {
+                name = 'Dadbod',
+                module = 'vim_dadbod_completion.blink'
+            }
+        }
+    },
 })
