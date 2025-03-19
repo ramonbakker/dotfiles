@@ -50,3 +50,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<Leader>q', '<Cmd>lua vim.diagnostic.setloclist()<CR>', opts)
     end
 })
+
+-- Format JSON responses when using rest.nvim
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'json',
+    callback = function()
+        vim.api.nvim_set_option_value('formatprg', 'jq', { scope = 'local' })
+    end,
+})

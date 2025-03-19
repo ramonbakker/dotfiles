@@ -4,9 +4,15 @@ return {
     'windwp/nvim-autopairs',
     {
         'folke/todo-comments.nvim',
-        depedencies = {
+        dependencies = {
             'nvim-lua/plenary.nvim'
         }
     },
     'andymass/vim-matchup',
+    {
+        'rest-nvim/rest.nvim',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter',
+        }
+    },
 }

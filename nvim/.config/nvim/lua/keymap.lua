@@ -66,3 +66,6 @@ vim.keymap.set('n', '<Leader>dC', "<Cmd>lua require'dapui'.close(); require'dap'
 
 -- vim-dadbod
 vim.keymap.set('n', '<Leader>db', '<Cmd>DBUIToggle<CR>')
+
+-- rest.nvim
+vim.keymap.set('n', '<Leader>hr', '<Cmd>Rest run<CR>')
