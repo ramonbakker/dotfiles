@@ -80,3 +80,7 @@ vim.g.sonokai_sign_column_background = 'none'
 vim.g.sonokai_transparent_background = 1
 vim.g.sonokai_diagnostic_text_highlight = 1
 vim.g.sonokai_better_performance = 1
+
+vim.diagnostic.config({
+    virtual_text = true
+})
