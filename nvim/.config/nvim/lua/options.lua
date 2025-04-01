@@ -17,7 +17,6 @@ vim.opt.signcolumn = 'yes'
 vim.opt.updatetime = 100
 vim.opt.sessionoptions = { 'blank', 'buffers', 'curdir', 'folds', 'help', 'tabpages', 'winsize', 'resize' }
 vim.opt.grepprg = 'rg --vimgrep'
-vim.opt.messagesopt = 'wait:1000,history:500'
 
 vim.keymap.set('n', '<Space>', '<Nop>')
 vim.g.mapleader = ' '
