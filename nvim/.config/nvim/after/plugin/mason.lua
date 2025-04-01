@@ -31,6 +31,7 @@ require('mason-nvim-dap').setup({
         end,
     }
 })
+require('csharpls_extended').buf_read_cmd_bind()
 
 local nvim_lsp = require('lspconfig')
 local configs = require('lspconfig/configs')
@@ -131,8 +132,4 @@ nvim_lsp.csharp_ls.setup({
             { buffer = bufnr, noremap = true }
         )
     end,
-    handlers = {
-        ['textDocument/definition'] = require('csharpls_extended').handler,
-        ['textDocument/typeDefinition'] = require('csharpls_extended').handler,
-    },
 })
