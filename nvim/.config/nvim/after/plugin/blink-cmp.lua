@@ -2,7 +2,8 @@ local blink = require('blink.cmp')
 
 blink.setup({
     keymap = {
-        preset = 'enter'
+        preset = 'enter',
+        ['<C-k>'] = {},
     },
     completion = {
         documentation = {
