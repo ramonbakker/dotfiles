@@ -34,9 +34,7 @@ require('mason-nvim-dap').setup({
 require('csharpls_extended').buf_read_cmd_bind()
 
 local nvim_lsp = require('lspconfig')
-local configs = require('lspconfig/configs')
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -124,12 +122,4 @@ nvim_lsp.ts_ls.setup({
 
 nvim_lsp.csharp_ls.setup({
     capabilities = capabilities,
-    on_attach = function(_, bufnr)
-        vim.keymap.set(
-            'n',
-            'gd',
-            '<Cmd>Telescope csharpls_definition<CR>',
-            { buffer = bufnr, noremap = true }
-        )
-    end,
 })
