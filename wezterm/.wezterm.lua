@@ -5,6 +5,7 @@ local config = {}
 config.front_end = 'WebGpu'
 config.enable_tab_bar = false
 config.font = wezterm.font_with_fallback {
+    'CommitMono Nerd Font',
     'Hack',
     'Hack Nerd Font',
     'Symbols Nerd Font',
