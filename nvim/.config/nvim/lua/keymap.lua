@@ -18,7 +18,6 @@ vim.keymap.set('n', '<Leader>li', '<Cmd>lua Snacks.picker.lsp_implementations()<
 vim.keymap.set('n', '<Leader>ls', '<Cmd>lua Snacks.picker.lsp_symbols()<CR>')
 vim.keymap.set('n', '<Leader>lf', '<Cmd>lua Snacks.picker.lsp_symbols({ filter = { default = { "Function", "Method" } } })<CR>')
 vim.keymap.set('n', '<Leader>lg', '<Cmd>lua Snacks.picker.grep()<CR>')
-vim.keymap.set('n', '<Leader>lr', '<Cmd>lua Snacks.picker.lsp_references()<CR>')
 vim.keymap.set('n', '<Leader>lt', '<Cmd>lua Snacks.picker.loclist()<CR>')
 vim.keymap.set('n', '<Leader>lq', '<Cmd>lua Snacks.picker.qflist()<CR>')
 vim.keymap.set('n', '<Leader>gb', '<Cmd>lua Snacks.picker.git_branches()<CR>')
