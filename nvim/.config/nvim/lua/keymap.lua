@@ -7,8 +7,22 @@ vim.keymap.set('n', '<Leader>lld', '<Cmd>lua vim.diagnostic.setloclist()<CR>')
 vim.keymap.set('n', '<C-p>', '<Cmd>lua Snacks.picker.files({ hidden = true })<CR>')
 vim.keymap.set('n', '<Leader><C-p>', '<Cmd>lua Snacks.picker.files({ hidden = true, ignored = true })<CR>')
 vim.keymap.set('n', '<Leader>c', function()
-    return '<Cmd>lua Snacks.picker.files({ hidden = true, ignored = true, dirs = {"' .. vim.fn.expand('%:p'.. string.rep(':h', vim.v.count1)) .. '"} })<CR>'
-end, { expr = true })
+    return Snacks.picker.files({
+        hidden = true,
+        ignored = true,
+        dirs = { vim.fn.expand('%:p'.. string.rep(':h', vim.v.count1)) },
+    })
+end)
+vim.keymap.set('n', '<Leader>F', function()
+    return Snacks.picker.files({
+        hidden = true,
+        ignored = true,
+        dirs = { vim.fn.expand('%:p'.. string.rep(':h', vim.v.count1)) },
+        search = vim.fn.expand('%:t:r'),
+        exclude = { vim.fn.expand('%:t') },
+        auto_confirm = true
+    })
+end)
 vim.keymap.set('n', '<Leader>m' , '<Cmd>lua Snacks.picker.marks()<CR>')
 vim.keymap.set('n', '<Leader>hc', '<Cmd>lua Snacks.picker.command_history()<CR>')
 vim.keymap.set('n', '<Leader>hs', '<Cmd>lua Snacks.picker.search_history()<CR>')
