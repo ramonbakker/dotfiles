@@ -39,8 +39,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', 'grt', '<Cmd>lua Snacks.picker.lsp_type_definitions()<CR>', opts)
         vim.keymap.set('n', 'grr', '<Cmd>lua Snacks.picker.lsp_references()<CR>', opts)
         vim.keymap.set('n', '<Leader>e', '<Cmd>lua vim.diagnostic.open_float()<CR>', opts)
-        vim.keymap.set('n', '[d', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-        vim.keymap.set('n', ']d', '<Cmd>lua vim.diagnostic.goto_next()<CR>', opts)
         vim.keymap.set('n', '<Leader>q', '<Cmd>lua vim.diagnostic.setloclist()<CR>', opts)
     end
 })
