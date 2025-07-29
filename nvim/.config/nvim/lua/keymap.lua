@@ -1,8 +1,6 @@
 vim.keymap.set('n', '<Leader>f', '<Cmd>Oil<CR>')
 
 vim.keymap.set('n', '<F3>', '<Cmd>call pdv#DocumentWithSnip()<CR>')
-vim.keymap.set('n', '<Leader>,', '<Cmd>cprevious<CR>')
-vim.keymap.set('n', '<Leader>.', '<Cmd>cnext<CR>')
 vim.keymap.set('n', '<Leader>lld', '<Cmd>lua vim.diagnostic.setloclist()<CR>')
 vim.keymap.set('n', '<C-p>', '<Cmd>lua Snacks.picker.files({ hidden = true })<CR>')
 vim.keymap.set('n', '<Leader><C-p>', '<Cmd>lua Snacks.picker.files({ hidden = true, ignored = true })<CR>')
