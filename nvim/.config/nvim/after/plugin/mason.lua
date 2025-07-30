@@ -6,6 +6,25 @@ require('mason').setup({
 })
 require('mason-lspconfig').setup({
     automatic_installation = true,
+    ensure_installed = {
+        'angularls',
+        'emmet_ls',
+        'html',
+        'intelephense',
+        'graphql',
+        'kotlin_language_server',
+        'cssls',
+        'vue_ls',
+        'jsonls',
+        'yamlls',
+        'dockerls',
+        'pylsp',
+        'lua_ls',
+        'svelte',
+        'ts_ls',
+        'vue_ls',
+        'docker_compose_language_service',
+    }
 })
 require('mason-nvim-dap').setup({
     ensure_installed = {
