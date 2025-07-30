@@ -82,6 +82,15 @@ local on_attach = function(client, bufnr)
         },
         bold = true,
     })
+
+    vim.lsp.codelens.refresh()
+
+    vim.api.nvim_create_autocmd({ 'BufEnter', 'CursorHold', 'InsertLeave' }, {
+        buffer = 0,
+        callback = function()
+            vim.lsp.codelens.refresh()
+        end
+    })
 end
 
 -- Use a loop to conveniently both setup defined servers 
