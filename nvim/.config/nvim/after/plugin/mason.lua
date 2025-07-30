@@ -99,11 +99,9 @@ local servers = {
     'graphql',
     'kotlin_language_server',
     'cssls',
-    'vuels',
     'jsonls',
     'yamlls',
     'dockerls',
-    'emmet_ls',
     'pylsp',
     'lua_ls',
     'svelte',
@@ -122,6 +120,11 @@ end
 nvim_lsp.angularls.setup({
     capabilities = capabilities,
     root_dir = nvim_lsp.util.root_pattern('angular.json', 'nx.json'),
+})
+
+nvim_lsp.emmet_ls.setup({
+    capabilities = capabilities,
+    filetypes = { 'html', 'css', 'sass', 'scss', 'less', 'vue', 'svelte', 'javascript', 'razor' }
 })
 
 nvim_lsp.html.setup({
@@ -146,6 +149,8 @@ nvim_lsp.ts_ls.setup({
         }
     }
 })
+
+vim.lsp.enable('vue_ls')
 
 vim.lsp.config('roslyn', {
     on_attach = on_attach,
