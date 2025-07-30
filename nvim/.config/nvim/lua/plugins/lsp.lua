@@ -1,6 +1,12 @@
 return {
     'neovim/nvim-lspconfig',
-    'williamboman/mason-lspconfig.nvim',
+    {
+        'mason-org/mason-lspconfig.nvim',
+        dependencies = {
+            'mason-org/mason.nvim',
+            'neovim/nvim-lspconfig'
+        }
+    },
     'mfussenegger/nvim-jdtls',
     'Decodetalkers/csharpls-extended-lsp.nvim',
 }
