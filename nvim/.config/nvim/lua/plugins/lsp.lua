@@ -8,5 +8,8 @@ return {
         }
     },
     'mfussenegger/nvim-jdtls',
-    'Decodetalkers/csharpls-extended-lsp.nvim',
+    {
+        'seblyng/roslyn.nvim',
+        ft = 'cs',
+    }
 }
