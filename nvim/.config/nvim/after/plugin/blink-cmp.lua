@@ -31,6 +31,11 @@ blink.setup({
                     {
                         'source_name'
                     }
+                },
+                components = {
+                    label_description = {
+                        width = { max = 50 }
+                    }
                 }
             }
         }
