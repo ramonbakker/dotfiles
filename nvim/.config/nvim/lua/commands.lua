@@ -38,6 +38,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<Leader>wl', '<Cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
         vim.keymap.set('n', 'grt', '<Cmd>lua Snacks.picker.lsp_type_definitions()<CR>', opts)
         vim.keymap.set('n', 'grr', '<Cmd>lua Snacks.picker.lsp_references()<CR>', opts)
+        vim.keymap.set('n', 'grl', '<Cmd>lua vim.lsp.codelens.run()<CR>', opts)
         vim.keymap.set('n', '<Leader>e', '<Cmd>lua vim.diagnostic.open_float()<CR>', opts)
         vim.keymap.set('n', '<Leader>q', '<Cmd>lua vim.diagnostic.setloclist()<CR>', opts)
     end
