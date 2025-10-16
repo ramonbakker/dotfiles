@@ -26,10 +26,60 @@ require('mason-lspconfig').setup({
         'docker_compose_language_service',
     }
 })
+
+vim.g.dotnet_get_project_name = function(projectPath)
+        return string.gsub(string.gsub(projectPath, '.*/', ''), '.csproj', '')
+end
+
+vim.g.dotnet_set_proj_path = function()
+    if vim.g['dotnet_last_proj_path'] ~= nil and vim.fn.confirm('Change project [current: ' .. vim.g.dotnet_get_project_name(vim.g['dotnet_last_proj_path']) .. ']?', '&yes\n&no', 2) ~= 1 then
+        return vim.g['dotnet_last_proj_path']
+    end
+
+    local projects = vim.fn.glob(vim.fn.getcwd() .. '**/*.csproj', false, true)
+
+    local list = {
+        'Select project:'
+    }
+
+    for i, project in ipairs(projects) do
+        table.insert(list, i .. '. ' .. vim.g.dotnet_get_project_name(project))
+    end
+
+    local projectNumber = vim.fn.inputlist(list)
+
+    if projectNumber == 0 then
+        return nil
+    end
+
+    local chosenProject = projects[projectNumber]
+
+    vim.g['dotnet_last_proj_path'] = chosenProject
+
+    return vim.g['dotnet_last_proj_path']
+end
+
+vim.g.dotnet_build_project = function()
+    local cmd = 'dotnet build -c Debug ' .. vim.g['dotnet_last_proj_path']
+    local f = os.execute(cmd)
+
+    if f ~= 0 then
+        print('\nBuild: ❌ (code: ' .. f .. ')')
+    end
+end
+
+vim.g.dotnet_get_dll_path = function()
+    local projectPath = string.gsub(vim.g['dotnet_last_proj_path'], '(.*)/.*.csproj', '%1')
+
+    return vim.fn.glob(projectPath .. '/bin/Debug/net*/' .. vim.g.dotnet_get_project_name(vim.g['dotnet_last_proj_path']) .. '.dll', false, false)
+end
+
 require('mason-nvim-dap').setup({
     ensure_installed = {
         'firefox',
         'php',
+        'coreclr',
+        'netcoredbg',
     },
     automatic_installation = true,
     handlers = {
@@ -43,6 +93,48 @@ require('mason-nvim-dap').setup({
                     request = 'launch',
                     name = 'Listen for Xdebug',
                     port = 9003,
+                }
+            }
+
+            require('mason-nvim-dap').default_setup(config)
+        end,
+        coreclr = function(config)
+            config.configurations = {
+                {
+                    type = "coreclr",
+                    name = "launch - netcoredbg",
+                    request = "launch",
+                    env = {
+                        ASPNETCORE_ENVIRONMENT="Development",
+                        ASPNETCORE_URLS = "https://localhost:5000"
+                    },
+                    -- Set cwd for appsettings.json
+                    cwd = function()
+                        if vim.g['dotnet_last_proj_path'] == nil then
+                            vim.g.dotnet_set_proj_path()
+                        end
+
+                        return string.gsub(vim.g['dotnet_last_proj_path'], '(.*)/.*.csproj', '%1')
+                    end,
+                    args = function ()
+                        if vim.g['dotnet_last_proj_path'] ~= nil and string.find(vim.g['dotnet_last_proj_path'], 'Tests') ~= nil then
+                            return {}
+                        end
+
+                        return {
+                            "/p:EnvironmentName=Development",
+                            "--environment=Development"
+                        }
+                    end,
+                    program = function()
+                        if vim.g.dotnet_set_proj_path() == nil then
+                            return
+                        end
+
+                        vim.g.dotnet_build_project()
+
+                        return vim.g.dotnet_get_dll_path()
+                    end,
                 }
             }
 
