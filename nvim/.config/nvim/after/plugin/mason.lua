@@ -143,7 +143,6 @@ require('mason-nvim-dap').setup({
     }
 })
 
-local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -187,6 +186,7 @@ end
 -- Use a loop to conveniently both setup defined servers 
 -- and map buffer local keybindings when the language server attaches
 local servers = {
+    'angularls',
     'intelephense',
     'graphql',
     'kotlin_language_server',
@@ -203,28 +203,23 @@ local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 for _, lsp in ipairs(servers) do
 
-  nvim_lsp[lsp].setup({
+  vim.lsp.config(lsp, {
         capabilities = capabilities,
         on_attach = on_attach,
     })
 end
 
-nvim_lsp.angularls.setup({
-    capabilities = capabilities,
-    root_dir = nvim_lsp.util.root_pattern('angular.json', 'nx.json'),
-})
-
-nvim_lsp.emmet_ls.setup({
+vim.lsp.config('emmet_ls', {
     capabilities = capabilities,
     filetypes = { 'html', 'css', 'sass', 'scss', 'less', 'vue', 'svelte', 'javascript', 'razor' }
 })
 
-nvim_lsp.html.setup({
+vim.lsp.config('html', {
     capabilities = capabilities,
     filetypes = { 'html', 'twig' },
 })
 
-nvim_lsp.ts_ls.setup({
+vim.lsp.config('ts_ls', {
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -241,8 +236,6 @@ nvim_lsp.ts_ls.setup({
         }
     }
 })
-
-vim.lsp.enable('vue_ls')
 
 vim.lsp.config('roslyn', {
     on_attach = on_attach,
