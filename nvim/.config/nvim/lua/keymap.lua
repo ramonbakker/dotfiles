@@ -45,12 +45,10 @@ vim.keymap.set('n', '<Leader>ih', '<Cmd>lua vim.lsp.inlay_hint.enable(not vim.ls
 vim.keymap.set('v', '<Leader>sl', "!awk '{ print length, $0 }' | sort -n | cut -d ' ' -f 2-<CR>")
 vim.keymap.set('v', '<Leader>slr', "!awk '{ print length, $0 }' | sort -nr | cut -d ' ' -f 2-<CR>")
 
--- vim-test
-vim.keymap.set('n', '<Leader>tn', '<Cmd>TestNearest<CR>')
-vim.keymap.set('n', '<Leader>tf', '<Cmd>TestFile<CR>')
-vim.keymap.set('n', '<Leader>ts', '<Cmd>TestSuite<CR>')
-vim.keymap.set('n', '<Leader>tl', '<Cmd>TestLast<CR>')
-vim.keymap.set('n', '<Leader>tv', '<Cmd>TestVisit<CR>')
+-- nvim-neotest
+vim.keymap.set('n', '<Leader>tn', '<Cmd>lua require("neotest").run.run()<CR>')
+vim.keymap.set('n', '<Leader>tf', '<Cmd>lua require("neotest").run.run(vim.fn.expand("%"))<CR>')
+vim.keymap.set('n', '<Leader>tl', '<Cmd>lua require("neotest").run.run_last()<CR>')
 
 -- Documentation: https://vim.fandom.com/wiki/Moving_lines_up_or_down
 vim.keymap.set('n', '<A-j>', '<Cmd>m .+1<CR>==')
