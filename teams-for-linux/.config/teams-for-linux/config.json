@@ -1,3 +1,7 @@
 {
-    "disableAutogain": true
+    "media": {
+        "microphone": {
+            "disableAutogain": true
+        }
+    }
 }
