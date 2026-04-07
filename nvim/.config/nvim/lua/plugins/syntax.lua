@@ -1,7 +1,9 @@
 return {
     {
         'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate'
+        branch = 'main',
+        build = ':TSUpdate',
+        lazy = false
     },
     'jlcrochet/vim-razor'
 }
