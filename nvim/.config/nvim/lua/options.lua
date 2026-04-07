@@ -38,42 +38,6 @@ vim.g.UltiSnipsJumpBackwardTrigger = '<C-p>'
 vim.g['test#strategy'] = 'neovim'
 vim.g['test#javascript#runner'] = 'jest'
 
-vim.g.lightline = {
-    colorscheme = 'deus',
-    active = {
-        left = {
-            { 'mode', 'paste' },
-            { 'git_branch', 'readonly', 'file_icon_and_path', 'modified' }
-        }
-    },
-    inactive = {
-        left = {
-            { 'file_icon_and_path', 'modified' }
-        },
-        right = {
-            { 'lineinfo' },
-            { 'percent' }
-        }
-    },
-    component = {
-        file_icon_and_path = '%<%{LightlineFileIconAndPath()}'
-    },
-    component_function = {
-        git_branch = 'LightlineGitBranch'
-    }
-}
-vim.g.lightline.tab_component_function = {
-    filename = 'lightline#tab#filename',
-    modified = 'lightline#tab#modified',
-    readonly = 'lightline#tab#readonly',
-    tabnum = 'lightline#tab#tabnum',
-    file_icon_and_path = 'LightlineTabActiveFileIconAndName'
-}
-vim.g.lightline.tab = {
-    active = { 'tabnum', 'file_icon_and_path', 'modified' },
-    inactive = { 'tabnum', 'file_icon_and_path', 'modified' },
-}
-
 vim.g.sonokai_enable_italic = 1
 vim.g.sonokai_disable_italic_comment = 1
 vim.g.sonokai_sign_column_background = 'none'

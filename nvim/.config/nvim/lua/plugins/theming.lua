@@ -7,9 +7,9 @@ return {
         end,
     },
     {
-        'itchyny/lightline.vim',
+        'nvim-lualine/lualine.nvim',
         dependencies = {
-            'ryanoasis/vim-devicons'
+            'nvim-tree/nvim-web-devicons'
         }
     },
     'nathanaelkane/vim-indent-guides',
