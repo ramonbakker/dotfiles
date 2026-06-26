@@ -1,4 +1,4 @@
-
+require('copilot').setup()
 require('avante').setup({
-    provider = 'gemini',
+    provider = 'copilot',
 })

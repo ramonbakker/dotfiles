@@ -238,6 +238,7 @@ vim.lsp.config('ts_ls', {
 })
 
 vim.lsp.config('roslyn', {
+    capabilities = capabilities,
     on_attach = on_attach,
     settings = {
         ['csharp|inlay_hints'] = {

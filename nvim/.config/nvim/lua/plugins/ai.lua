@@ -10,7 +10,9 @@ return {
                     file_types = { 'markdown', 'Avante' },
                 },
                 ft = { 'markdown', 'Avante' }
-            }
+            },
+            'zbirenbaum/copilot.lua',
+            'copilotlsp-nvim/copilot-lsp',
         },
         build = 'make',
         event = 'VeryLazy',
